@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cardápio - Santo Drink Bar</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/cardapio.css">
+</head>
+<body>
+    <!-- Header e Navegação -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="./images/logo-removebg-preview.png" alt="Santo Drink Bar" class="nav-logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Início</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="cardapio.html">Cardápio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="sobre.html">Sobre</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#contato">Contato</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Cabeçalho do Cardápio -->
+    <section class="cardapio-header">
+        <div class="overlay"></div>
+        <div class="container text-center">
+            <h1 data-aos="fade-up">NOSSO CARDÁPIO</h1>
+            <p data-aos="fade-up" data-aos-delay="300">Drinks e petiscos preparados com paixão</p>
+        </div>
+    </section>
+
+    <!-- Navegação do Cardápio -->
+    <section class="cardapio-nav">
+        <div class="container">
+            <div class="nav-tabs" data-aos="fade-up">
+                <a href="#drinks" class="nav-tab active">Drinks</a>
+                <a href="#cervejas" class="nav-tab">Cervejas</a>
+                <a href="#petiscos" class="nav-tab">Petiscos</a>
+                <a href="#caldos" class="nav-tab">Caldos</a>
+                <a href="#especiais" class="nav-tab">Especiais</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Barra de ferramentas do cardápio (NOVA) -->
+    <section class="cardapio-tools">
+        <div class="container">
+            <div class="tools-wrapper" data-aos="fade-up">
+                <!-- Filtros rápidos -->
+                <div class="filter-buttons">
+                    <span class="filter-label">Filtrar por:</span>
+                    <button class="filter-btn active" data-filter="all">Todos</button>
+                    <button class="filter-btn" data-filter="gin">Gin</button>
+                    <button class="filter-btn" data-filter="vodka">Vodka</button>
+                    <button class="filter-btn" data-filter="cachaca">Cachaça</button>
+                </div>
+                
+                <!-- Toggle de visualização -->
+                <button class="view-toggle btn btn-sm btn-outline-dourado">
+                    <i class="fas fa-grip-horizontal"></i>
+                    <span>Visualizar em Grade</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Conteúdo do Cardápio - Drinks -->
+    <section id="drinks" class="cardapio-section">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Drinks</h2>
+            
+            <div class="cardapio-category" data-aos="fade-up">
+                <h3>Drinks Autorais</h3>
+                
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="menu-item with-image drink-1 gin novo">
+                            <span class="badge badge-novo">Novo</span>
+                            <div class="menu-item-info">
+                                <h4>SORRISOS BOBOS, ABRAÇOS LONGOS, OLHARES SINCEROS</h4>
+                                <p>Gin, xarope de morango, limão siciliano, água com gás</p>
+                                <div class="drink-tags">
+                                    <span class="drink-tag"><i class="fas fa-wine-glass-alt"></i> Refrescante</span>
+                                    <span class="drink-tag"><i class="fas fa-fire"></i> 15% alc.</span>
+                                </div>
+                            </div>
+                            <div class="menu-item-price">R$ 28</div>
+                            <button class="details-btn" aria-label="Ver mais detalhes"><i class="fas fa-chevron-down"></i></button>
+                            <div class="details-content">
+                                <p class="detail-text">Este drink combina a suavidade do gin com a refrescância do limão siciliano e a doçura do morango, criando uma experiência sensorial única.</p>
+                                <div class="detail-actions">
+                                    <button class="btn-share"><i class="fas fa-share-alt"></i> Compartilhar</button>
+                                    <span class="drink-rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                        <span>(12)</span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6">
+                        <div class="menu-item with-image drink-2 gin">
+                            <div class="menu-item-info">
+                                <h4>SEJA MAIS FORTE DO QUE A SUA MELHOR DESCULPA</h4>
+                                <p>Gin, licor de maracujá, xarope de maracujá, suco de limão</p>
+                                <div class="drink-tags">
+                                    <span class="drink-tag"><i class="fas fa-lemon"></i> Cítrico</span>
+                                    <span class="drink-tag"><i class="fas fa-fire"></i> 18% alc.</span>
+                                </div>
+                            </div>
+                            <div class="menu-item-price">R$ 28</div>
+                            <button class="details-btn" aria-label="Ver mais detalhes"><i class="fas fa-chevron-down"></i></button>
+                            <div class="details-content">
+                                <p class="detail-text">A combinação perfeita entre o amargor do gin e a doçura tropical do maracujá. Um drink refrescante com notas cítricas.</p>
+                                <div class="detail-actions">
+                                    <button class="btn-share"><i class="fas fa-share-alt"></i> Compartilhar</button>
+                                    <span class="drink-rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                        <span>(8)</span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6">
+                        <div class="menu-item with-image drink-3 gin popular">
+                            <span class="badge badge-popular">Popular</span>
+                            <div class="menu-item-info">
+                                <h4>FALO NADA, SÓ OBSERVO</h4>
+                                <p>Gin, licor de menta, limão, água tônica</p>
+                                <div class="drink-tags">
+                                    <span class="drink-tag"><i class="fas fa-leaf"></i> Herbal</span>
+                                    <span class="drink-tag"><i class="fas fa-fire"></i> 16% alc.</span>
+                                </div>
+                            </div>
+                            <div class="menu-item-price">R$ 28</div>
+                            <button class="details-btn" aria-label="Ver mais detalhes"><i class="fas fa-chevron-down"></i></button>
+                            <div class="details-content">
+                                <p class="detail-text">Refrescante e aromático, este drink traz a intensidade da menta combinada com o frescor do limão e a complexidade do gin.</p>
+                                <div class="detail-actions">
+                                    <button class="btn-share"><i class="fas fa-share-alt"></i> Compartilhar</button>
+                                    <span class="drink-rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <span>(22)</span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6">
+                        <div class="menu-item with-image drink-4 cachaca">
+                            <div class="menu-item-info">
+                                <h4>ALÉM DE LINDA É CACHACEIRA</h4>
+                                <p>Cachaça envelhecida, morango, limão, xarope de açúcar</p>
+                                <div class="drink-tags">
+                                    <span class="drink-tag"><i class="fas fa-apple-alt"></i> Frutado</span>
+                                    <span class="drink-tag"><i class="fas fa-fire"></i> 22% alc.</span>
+                                </div>
+                            </div>
+                            <div class="menu-item-price">R$ 26</div>
+                            <button class="details-btn" aria-label="Ver mais detalhes"><i class="fas fa-chevron-down"></i></button>
+                            <div class="details-content">
+                                <p class="detail-text">Uma caipirinha especial com cachaça envelhecida e morangos frescos, perfeito para quem aprecia a brasilidade da bebida.</p>
+                                <div class="detail-actions">
+                                    <button class="btn-share"><i class="fas fa-share-alt"></i> Compartilhar</button>
+                                    <span class="drink-rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                        <i class="far fa-star"></i>
+                                        <span>(15)</span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6">
+                        <div class="menu-item with-image drink-5 gin recomendado">
+                            <span class="badge badge-recomendado">Recomendado</span>
+                            <div class="menu-item-info">
+                                <h4>QUE A FELICIDADE VIRE ROTINA</h4>
+                                <p>Gin, licor de pêssego, xarope de maçã verde, água tônica</p>
+                                <div class="drink-tags">
+                                    <span class="drink-tag"><i class="fas fa-apple-alt"></i> Frutado</span>
+                                    <span class="drink-tag"><i class="fas fa-fire"></i> 17% alc.</span>
+                                </div>
+                            </div>
+                            <div class="menu-item-price">R$ 28</div>
+                            <button class="details-btn" aria-label="Ver mais detalhes"><i class="fas fa-chevron-down"></i></button>
+                            <div class="details-content">
+                                <p class="detail-text">A doçura do pêssego se mistura com a acidez da maçã verde, criando uma experiência equilibrada e sofisticada.</p>
+                                <div class="detail-actions">
+                                    <button class="btn-share"><i class="fas fa-share-alt"></i> Compartilhar</button>
+                                    <span class="drink-rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                        <span>(18)</span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="cardapio-category" data-aos="fade-up">
+                <h3>Clássicos</h3>
+                
+                <div class="card-grid">
+                    <div class="drink-card">
+                        <span class="card-badge badge-drink">Clássico</span>
+                        <div class="card-content">
+                            <h3 class="card-title">Gin Tônica</h3>
+                            <p class="card-description">Gin, água tônica, limão e especiarias</p>
+                            <span class="card-tag"><i class="fas fa-leaf"></i>Aromático</span>
+                            <span class="card-tag"><i class="fas fa-wine-glass-alt"></i>15% alc.</span>
+                        </div>
+                        <span class="card-price">R$ 24</span>
+                    </div>
+                    
+                    <div class="drink-card">
+                        <span class="card-badge badge-drink">Clássico</span>
+                        <div class="card-content">
+                            <h3 class="card-title">Mojito</h3>
+                            <p class="card-description">Rum, limão, hortelã, açúcar e água com gás</p>
+                            <span class="card-tag"><i class="fas fa-leaf"></i>Herbal</span>
+                            <span class="card-tag"><i class="fas fa-wine-glass-alt"></i>14% alc.</span>
+                        </div>
+                        <span class="card-price">R$ 22</span>
+                    </div>
+                    
+                    <div class="drink-card">
+                        <span class="card-badge badge-drink">Clássico</span>
+                        <div class="card-content">
+                            <h3 class="card-title">Caipirinha</h3>
+                            <p class="card-description">Cachaça, limão, açúcar</p>
+                            <span class="card-tag"><i class="fas fa-lemon"></i>Cítrico</span>
+                            <span class="card-tag"><i class="fas fa-wine-glass-alt"></i>20% alc.</span>
+                        </div>
+                        <span class="card-price">R$ 18</span>
+                    </div>
+                    
+                    <div class="drink-card">
+                        <span class="card-badge badge-drink">Clássico</span>
+                        <div class="card-content">
+                            <h3 class="card-title">Caipirosca</h3>
+                            <p class="card-description">Vodka, limão, açúcar</p>
+                            <span class="card-tag"><i class="fas fa-lemon"></i>Cítrico</span>
+                            <span class="card-tag"><i class="fas fa-wine-glass-alt"></i>18% alc.</span>
+                        </div>
+                        <span class="card-price">R$ 20</span>
+                    </div>
+                    
+                    <div class="drink-card">
+                        <span class="card-badge badge-drink">Clássico</span>
+                        <div class="card-content">
+                            <h3 class="card-title">Moscow Mule</h3>
+                            <p class="card-description">Vodka, limão, xarope de gengibre, água com gás</p>
+                            <span class="card-tag"><i class="fas fa-pepper-hot"></i>Picante</span>
+                            <span class="card-tag"><i class="fas fa-wine-glass-alt"></i>16% alc.</span>
+                        </div>
+                        <span class="card-price">R$ 24</span>
+                    </div>
+                    
+                    <div class="drink-card">
+                        <span class="card-badge badge-drink">Clássico</span>
+                        <div class="card-content">
+                            <h3 class="card-title">Negroni</h3>
+                            <p class="card-description">Gin, Campari, vermute rosso</p>
+                            <span class="card-tag"><i class="fas fa-glass-whiskey"></i>Encorpado</span>
+                            <span class="card-tag"><i class="fas fa-wine-glass-alt"></i>24% alc.</span>
+                        </div>
+                        <span class="card-price">R$ 26</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Conteúdo do Cardápio - Cervejas -->
+    <section id="cervejas" class="cardapio-section bg-dark">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Cervejas</h2>
+            
+            <div class="cardapio-category" data-aos="fade-up">
+                <h3>Tradicionais</h3>
+                
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="menu-item">
+                            <div class="menu-item-info">
+                                <h4>Heineken</h4>
+                                <p>Long Neck 330ml</p>
+                            </div>
+                            <div class="menu-item-price">R$ 12</div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6">
+                        <div class="menu-item">
+                            <div class="menu-item-info">
+                                <h4>Budweiser</h4>
+                                <p>Long Neck 330ml</p>
+                            </div>
+                            <div class="menu-item-price">R$ 12</div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6">
+                        <div class="menu-item">
+                            <div class="menu-item-info">
+                                <h4>Stella Artois</h4>
+                                <p>Long Neck 330ml</p>
+                            </div>
+                            <div class="menu-item-price">R$ 12</div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6">
+                        <div class="menu-item">
+                            <div class="menu-item-info">
+                                <h4>Corona</h4>
+                                <p>Long Neck 330ml</p>
+                            </div>
+                            <div class="menu-item-price">R$ 14</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="cardapio-category" data-aos="fade-up">
+                <h3>Especiais</h3>
+                
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="menu-item">
+                            <div class="menu-item-info">
+                                <h4>IPA</h4>
+                                <p>Garrafa 500ml</p>
+                            </div>
+                            <div class="menu-item-price">R$ 25</div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6">
+                        <div class="menu-item">
+                            <div class="menu-item-info">
+                                <h4>Weiss</h4>
+                                <p>Garrafa 500ml</p>
+                            </div>
+                            <div class="menu-item-price">R$ 24</div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6">
+                        <div class="menu-item">
+                            <div class="menu-item-info">
+                                <h4>Stout</h4>
+                                <p>Garrafa 500ml</p>
+                            </div>
+                            <div class="menu-item-price">R$ 26</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Conteúdo do Cardápio - Petiscos -->
+    <section id="petiscos" class="cardapio-section">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Petiscos</h2>
+            
+            <div class="cardapio-category" data-aos="fade-up">
+                <h3>Porções</h3>
+                
+                <div class="card-grid">
+                    <div class="porcao-card">
+                        <span class="card-badge badge-porcao">Porção</span>
+                        <div class="card-content">
+                            <h3 class="card-title">Torresmo</h3>
+                            <p class="card-description">Torresmo crocante, acompanha limão e molho especial</p>
+                        </div>
+                        <span class="card-price">R$ 35</span>
+                    </div>
+                    
+                    <div class="porcao-card">
+                        <span class="card-badge badge-porcao">Porção</span>
+                        <div class="card-content">
+                            <h3 class="card-title">Frango à Passarinho</h3>
+                            <p class="card-description">Crocante por fora, suculento por dentro, com molho de pimenta da casa</p>
+                        </div>
+                        <span class="card-price">R$ 38</span>
+                    </div>
+                    
+                    <div class="porcao-card">
+                        <span class="card-badge badge-porcao">Porção</span>
+                        <div class="card-content">
+                            <h3 class="card-title">Batata Frita</h3>
+                            <p class="card-description">Batata frita crocante com molho especial</p>
+                        </div>
+                        <span class="card-price">R$ 30</span>
+                    </div>
+                    
+                    <div class="porcao-card">
+                        <span class="card-badge badge-porcao">Porção</span>
+                        <div class="card-content">
+                            <h3 class="card-title">Porção de Linguiça</h3>
+                            <p class="card-description">Linguiça artesanal grelhada com cebola e pimentão</p>
+                        </div>
+                        <span class="card-price">R$ 36</span>
+                    </div>
+                    
+                    <div class="porcao-card">
+                        <span class="card-badge badge-porcao">Porção</span>
+                        <div class="card-content">
+                            <h3 class="card-title">Bolinho de Bacalhau</h3>
+                            <p class="card-description">6 unidades de bolinhos de bacalhau</p>
+                        </div>
+                        <span class="card-price">R$ 40</span>
+                    </div>
+                    
+                    <div class="porcao-card">
+                        <span class="card-badge badge-porcao">Porção</span>
+                        <div class="card-content">
+                            <h3 class="card-title">Mix de Petiscos</h3>
+                            <p class="card-description">Frango à passarinho, batata frita, bolinho de bacalhau e torresmo</p>
+                        </div>
+                        <span class="card-price">R$ 65</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Conteúdo do Cardápio - Caldos -->
+    <section id="caldos" class="cardapio-section bg-dark">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Caldos</h2>
+            
+            <div class="cardapio-category" data-aos="fade-up">
+                <h3>Caldos do Dia</h3>
+                
+                <div class="card-grid">
+                    <div class="caldo-card">
+                        <span class="card-badge badge-caldo">Caldo</span>
+                        <div class="card-content">
+                            <h3 class="card-title">Caldo de Feijão</h3>
+                            <p class="card-description">Feijão, bacon, calabresa, costelinha e temperos</p>
+                        </div>
+                        <span class="card-price">R$ 20</span>
+                    </div>
+                    
+                    <div class="caldo-card">
+                        <span class="card-badge badge-caldo">Caldo</span>
+                        <div class="card-content">
+                            <h3 class="card-title">Caldo Verde</h3>
+                            <p class="card-description">Batata, linguiça portuguesa, couve e temperos</p>
+                        </div>
+                        <span class="card-price">R$ 20</span>
+                    </div>
+                    
+                    <div class="caldo-card">
+                        <span class="card-badge badge-caldo">Caldo</span>
+                        <div class="card-content">
+                            <h3 class="card-title">Caldo de Mandioca</h3>
+                            <p class="card-description">Mandioca cremosa, carne seca desfiada e temperos</p>
+                        </div>
+                        <span class="card-price">R$ 22</span>
+                    </div>
+                    
+                    <div class="caldo-card">
+                        <span class="card-badge badge-caldo">Caldo</span>
+                        <div class="card-content">
+                            <h3 class="card-title">Caldo de Frango</h3>
+                            <p class="card-description">Frango desfiado, legumes e temperos</p>
+                        </div>
+                        <span class="card-price">R$ 20</span>
+                    </div>
+                </div>
+                
+                <div class="caldo-info" data-aos="fade-up">
+                    <div class="info-box">
+                        <i class="fas fa-info-circle"></i>
+                        <p>Consulte o sabor do dia. Todos os caldos acompanham torradas e são servidos em canecas.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Conteúdo do Cardápio - Especiais -->
+    <section id="especiais" class="cardapio-section">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Especiais</h2>
+            
+            <div class="cardapio-category" data-aos="fade-up">
+                <h3>Promoções</h3>
+                
+                <div class="card-grid">
+                    <div class="promo-card">
+                        <span class="card-badge badge-quarta">Quarta</span>
+                        <div class="card-content">
+                            <h3 class="card-title">Double Gin</h3>
+                            <p class="card-description">Quartas-feiras - Todos os drinks com gin em dose dupla pelo mesmo preço</p>
+                        </div>
+                    </div>
+                    
+                    <div class="promo-card">
+                        <span class="card-badge badge-terca">Terça</span>
+                        <div class="card-content">
+                            <h3 class="card-title">Double Caipirinha</h3>
+                            <p class="card-description">Terças-feiras - Todas as caipirinhas em dose dupla pelo mesmo preço</p>
+                        </div>
+                    </div>
+                    
+                    <div class="promo-card">
+                        <span class="card-badge badge-happy">Happy</span>
+                        <div class="card-content">
+                            <h3 class="card-title">Happy Hour</h3>
+                            <p class="card-description">De segunda a quinta das 18h às 20h - Chopp em dobro</p>
+                        </div>
+                    </div>
+                    
+                    <div class="promo-card">
+                        <span class="card-badge badge-combo">Combo</span>
+                        <div class="card-content">
+                            <h3 class="card-title">Combo Petisco + Drink</h3>
+                            <p class="card-description">1 petisco + 2 drinks por R$ 85 (válido para seleção específica)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <img src="images/logo-removebg-preview.png" alt="Santo Drink Bar" class="footer-logo">
+                    <p class="slogan-footer">NÃO NASCI PARA SER COMUM, NASCI PRA BEBER</p>
+                </div>
+                <div class="col-md-4">
+                    <h4>Links Rápidos</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Início</a></li>
+                        <li><a href="cardapio.html">Cardápio</a></li>
+                        <li><a href="sobre.html">Sobre</a></li>
+                        <li><a href="index.html#contato">Contato</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h4>Newsletter</h4>
+                    <p>Receba nossas novidades e promoções</p>
+                    <form class="newsletter-form">
+                        <div class="input-group">
+                            <input type="email" class="form-control" placeholder="Seu e-mail">
+                            <button class="btn btn-dourado" type="submit">Assinar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="copyright">
+            <p>&copy; 2025 Santo Drink Bar - Todos os direitos reservados</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <!-- Primeiro carregamos o arquivo cardapio.js com nossas funções personalizadas -->
+    <script src="js/cardapio.js"></script>
+    <script>
+        // Inicialização AOS (Animate On Scroll)
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+
+        // Navegação do cardápio
+        $(document).ready(function(){
+            // Navbar scroll effect
+            $(window).scroll(function() {
+                if ($(this).scrollTop() > 50) {
+                    $('.navbar').addClass('scrolled');
+                } else {
+                    $('.navbar').removeClass('scrolled');
+                }
+            });
+
+            // Navegação de tabs do cardápio
+            $('.nav-tab').click(function(e){
+                e.preventDefault();
+                
+                // Remove a classe active de todas as tabs
+                $('.nav-tab').removeClass('active');
+                
+                // Adiciona a classe active na tab clicada
+                $(this).addClass('active');
+                
+                // Pega o ID do link
+                var targetSection = $(this).attr('href');
+                
+                // Rola a página até a seção com animação
+                $('html, body').animate({
+                    scrollTop: $(targetSection).offset().top - 100
+                }, 800);
+            });
+
+            // Destaque das seções do cardápio ao scrollar
+            $(window).scroll(function() {
+                var scrollPos = $(window).scrollTop();
+
+                $('section.cardapio-section').each(function() {
+                    var target = $(this).offset().top - 120;
+                    var id = $(this).attr('id');
+
+                    if (scrollPos >= target) {
+                        $('.nav-tab').removeClass('active');
+                        $('.nav-tab[href="#' + id + '"]').addClass('active');
+                    }
+                });
+            });
+        });
+    </script>
+    
+</body>
+</html>

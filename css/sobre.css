@@ -1,0 +1,260 @@
+/* css/sobre.css */
+.sobre-header {
+    position: relative;
+    height: 50vh;
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    background: url('../images/sobre-header.jpg') center/cover no-repeat;
+    margin-bottom: 80px;
+}
+
+.sobre-header .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8));
+}
+
+.sobre-header .container {
+    position: relative;
+    z-index: 1;
+}
+
+.sobre-header h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: var(--dourado);
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+    text-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+}
+
+.sobre-header p {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--branco);
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+}
+
+.sobre-principal {
+    padding: 80px 0;
+    background-color: rgba(26, 26, 26, 0.6);
+    backdrop-filter: blur(2px);
+}
+
+.sobre-content {
+    padding-right: 30px;
+}
+
+.sobre-content p {
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+    line-height: 1.7;
+}
+
+.sobre-img-container {
+    position: relative;
+    height: 400px;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.sobre-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Filosofia e Valores */
+.filosofia-section {
+    padding: 80px 0;
+    background-color: rgba(15, 15, 15, 0.75);
+    backdrop-filter: blur(3px);
+}
+
+.filosofia-quote {
+    margin: 40px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.filosofia-quote i {
+    font-size: 2.5rem;
+    color: var(--dourado);
+    margin: 0 15px;
+}
+
+.filosofia-quote p {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--dourado);
+    margin: 0;
+    letter-spacing: 1px;
+}
+
+.filosofia-texto {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin-bottom: 60px;
+}
+
+.valores-cards {
+    margin-top: 50px;
+}
+
+.valor-card {
+    background-color: rgba(31, 31, 31, 0.8);
+    border-radius: 10px;
+    padding: 30px 20px;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.valor-card:hover {
+    transform: translateY(-10px);
+}
+
+.icon-circle {
+    width: 80px;
+    height: 80px;
+    background-color: var(--dourado);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+}
+
+.icon-circle i {
+    font-size: 35px;
+    color: var(--preto);
+}
+
+.valor-card h3 {
+    color: var(--dourado);
+    margin-bottom: 15px;
+    font-size: 1.4rem;
+}
+
+.valor-card p {
+    color: #e0e0e0;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+/* Equipe */
+.equipe-section {
+    padding: 80px 0;
+    background-color: rgba(26, 26, 26, 0.6);
+    backdrop-filter: blur(2px);
+}
+
+.membro-card {
+    background-color: rgba(31, 31, 31, 0.8);
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.membro-card:hover {
+    transform: translateY(-10px);
+}
+
+.membro-img {
+    height: 250px;
+    overflow: hidden;
+}
+
+.membro-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.membro-card h4 {
+    color: var(--dourado);
+    margin: 20px 0 5px;
+    padding: 0 20px;
+    font-size: 1.3rem;
+}
+
+.membro-card p.cargo {
+    color: #fff;
+    font-weight: 600;
+    margin-bottom: 10px;
+    padding: 0 20px;
+}
+
+.membro-card p.bio {
+    color: #e0e0e0;
+    padding: 0 20px 20px;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    flex-grow: 1;
+}
+
+/* Responsividade */
+@media (max-width: 992px) {
+    .sobre-header h1 {
+        font-size: 3rem;
+    }
+    
+    .sobre-header p {
+        font-size: 1.2rem;
+    }
+    
+    .filosofia-quote p {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .sobre-header {
+        min-height: 350px;
+    }
+    
+    .sobre-header h1 {
+        font-size: 2.5rem;
+    }
+    
+    .sobre-img-container {
+        height: 300px;
+        margin-top: 30px;
+    }
+    
+    .filosofia-quote i {
+        font-size: 1.8rem;
+        margin: 0 10px;
+    }
+    
+    .filosofia-quote p {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .sobre-header h1 {
+        font-size: 2rem;
+    }
+    
+    .filosofia-quote p {
+        font-size: 1.1rem;
+    }
+    
+    .valor-card {
+        margin-bottom: 20px;
+    }
+}

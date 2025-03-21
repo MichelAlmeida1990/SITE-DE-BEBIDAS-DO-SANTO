@@ -1,0 +1,678 @@
+/* Base */
+:root {
+    --preto: #0F0F0F;
+    --dourado: #F9C22E;
+    --vermelho: #B91646;
+    --verde: #1E5128;
+    --branco: #FFFFFF;
+    --cinza-escuro: #1E1E1E;
+    --cinza-claro: #AAAAAA;
+    --overlay: rgba(15, 15, 15, 0.7);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--preto);
+    color: var(--branco);
+    font-size: 16px;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+a {
+    color: var(--dourado);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+a:hover {
+    color: var(--vermelho);
+}
+
+img {
+    max-width: 100%;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 2rem;
+    position: relative;
+    display: inline-block;
+}
+
+.section-title:after {
+    content: '';
+    position: absolute;
+    width: 60px;
+    height: 3px;
+    background: var(--dourado);
+    bottom: -10px;
+    left: 0;
+}
+
+section {
+    padding: 80px 0;
+}
+
+/* Botões */
+.btn {
+    padding: 12px 25px;
+    border-radius: 2px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+.btn-dourado {
+    background-color: var(--dourado);
+    color: var(--preto);
+    border: none;
+}
+
+.btn-dourado:hover {
+    background-color: #e5b029;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    color: var(--preto);
+}
+
+.btn-outline-dourado {
+    background-color: transparent;
+    color: var(--dourado);
+    border: 2px solid var(--dourado);
+}
+
+.btn-outline-dourado:hover {
+    background-color: var(--dourado);
+    color: var(--preto);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+/* Navbar */
+.navbar {
+    background-color: rgba(15, 15, 15, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 15px 0;
+    border-bottom: 1px solid rgba(249, 194, 46, 0.3);
+    transition: all 0.3s ease;
+}
+
+.navbar.scrolled {
+    padding: 10px 0;
+    background-color: rgba(15, 15, 15, 0.98);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.nav-logo {
+    height: 50px;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: var(--branco);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 500;
+    position: relative;
+    padding: 0.5rem 1rem;
+}
+
+.navbar-dark .navbar-nav .nav-link:after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: var(--dourado);
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: width 0.3s;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover:after,
+.navbar-dark .navbar-nav .nav-link.active:after {
+    width: 80%;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover,
+.navbar-dark .navbar-nav .nav-link.active {
+    color: var(--dourado);
+}
+
+/* Hero Section */
+.hero-section {
+    height: 100vh;
+    min-height: 600px;
+    background-image: url('../images/hero-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    position: relative;
+    color: var(--branco);
+}
+
+.hero-section .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(15,15,15,1), rgba(15,15,15,0.6));
+    z-index: 1;
+}
+
+.hero-section .container {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-section h1 {
+    font-size: 4rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.hero-section .slogan {
+    font-size: 1.5rem;
+    margin-bottom: 40px;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+}
+
+/* Promoções Semanais */
+.promos-section {
+    background-color: var(--cinza-escuro);
+    padding: 100px 0;
+}
+
+.promos-section .section-title {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.promos-section .section-title:after {
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.promo-card {
+    height: 300px;
+    border-radius: 8px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 30px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    transition: all 0.3s ease;
+}
+
+.promo-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.4);
+}
+
+.promo-card:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(15,15,15,0.9), rgba(15,15,15,0.4));
+    transition: all 0.3s ease;
+}
+
+.promo-card:hover:before {
+    background: linear-gradient(to top, rgba(15,15,15,0.9), rgba(15,15,15,0.1));
+}
+
+.promo-card h3, .promo-card p {
+    position: absolute;
+    color: var(--branco);
+    z-index: 1;
+    transition: all 0.3s ease;
+}
+
+.promo-card h3 {
+    bottom: 50px;
+    left: 20px;
+    font-size: 2rem;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.promo-card p {
+    bottom: 20px;
+    left: 20px;
+    font-size: 1.2rem;
+    color: var(--dourado);
+}
+
+.countdown {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: rgba(15,15,15,0.7);
+    padding: 10px 15px;
+    border-radius: 4px;
+    border-left: 3px solid var(--dourado);
+    font-weight: 600;
+    z-index: 1;
+}
+
+.countdown span {
+    color: var(--dourado);
+    font-weight: 800;
+    margin: 0 3px;
+}
+
+/* Drinks Especiais */
+.drinks-section {
+    background-color: var(--preto);
+    padding: 100px 0;
+}
+
+.drinks-section .section-title {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.drinks-section .section-title:after {
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.drink-slider {
+    padding: 40px 0;
+}
+
+.drink-slide {
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 15px 25px rgba(0,0,0,0.3);
+    margin: 0 15px;
+    transition: all 0.3s ease;
+}
+
+.drink-slide:hover {
+    transform: scale(1.03);
+    box-shadow: 0 20px 30px rgba(0,0,0,0.4);
+}
+
+.drink-slide img {
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+    transition: all 0.3s ease;
+}
+
+.drink-quote {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(15,15,15,0.8);
+    color: var(--branco);
+    padding: 15px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    text-align: center;
+    border-top: 2px solid var(--dourado);
+}
+
+/* Gastronomia */
+.gastronomia-section {
+    background-color: var(--cinza-escuro);
+    padding: 100px 0;
+}
+
+.food-feature {
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 15px 25px rgba(0,0,0,0.3);
+}
+
+.feature-text {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(15,15,15,0.8);
+    color: var(--branco);
+    padding: 20px;
+    border-top: 2px solid var(--dourado);
+}
+
+.feature-text h3 {
+    margin-bottom: 5px;
+    color: var(--dourado);
+}
+
+.petiscos-destaque {
+    margin-top: 80px;
+}
+
+.petisco-card {
+    background-color: var(--preto);
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 30px;
+    text-align: center;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+}
+
+.petisco-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+}
+
+.petisco-card img {
+    border-radius: 8px;
+    margin-bottom: 15px;
+    height: 200px;
+    object-fit: cover;
+    width: 100%;
+}
+
+.petisco-card h4 {
+    font-size: 1.3rem;
+    color: var(--dourado);
+    margin-bottom: 10px;
+}
+
+/* Sobre */
+.sobre-section {
+    background-color: var(--preto);
+    padding: 100px 0;
+}
+
+.sobre-img {
+    border-radius: 8px;
+    box-shadow: 0 15px 25px rgba(0,0,0,0.3);
+}
+
+/* Contato */
+.contato-section {
+    background-color: var(--cinza-escuro);
+    padding: 100px 0;
+}
+
+.contato-section .section-title {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.contato-section .section-title:after {
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.contato-info {
+    background-color: var(--preto);
+    border-radius: 8px;
+    padding: 30px;
+    box-shadow: 0 15px 25px rgba(0,0,0,0.2);
+    height: 100%;
+}
+
+.info-item {
+    display: flex;
+    margin-bottom: 25px;
+}
+
+.info-item i {
+    font-size: 1.5rem;
+    color: var(--dourado);
+    margin-right: 15px;
+    margin-top: 5px;
+}
+
+.info-item h4 {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+    color: var(--dourado);
+}
+
+ul.horarios {
+    list-style: none;
+    padding: 0;
+}
+
+ul.horarios li {
+    margin-bottom: 5px;
+}
+
+ul.horarios li span {
+    font-weight: 600;
+    color: var(--dourado);
+    margin-right: 10px;
+}
+
+.social-media {
+    margin-top: 30px;
+    display: flex;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: var(--cinza-escuro);
+    color: var(--dourado);
+    border-radius: 50%;
+    margin-right: 10px;
+    transition: all 0.3s ease;
+}
+
+.social-link:hover {
+    background-color: var(--dourado);
+    color: var(--preto);
+    transform: translateY(-3px);
+}
+
+.mapa {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 15px 25px rgba(0,0,0,0.2);
+    height: 100%;
+}
+
+.mapa iframe {
+    width: 100%;
+    height: 100%;
+    min-height: 450px;
+    border: none;
+}
+
+/* Footer */
+footer {
+    background-color: var(--preto);
+    padding-top: 80px;
+    border-top: 1px solid rgba(249, 194, 46, 0.3);
+}
+
+.footer-logo {
+    height: 80px;
+    margin-bottom: 20px;
+}
+
+.slogan-footer {
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-bottom: 30px;
+    color: var(--cinza-claro);
+}
+
+footer h4 {
+    color: var(--dourado);
+    margin-bottom: 25px;
+    font-size: 1.3rem;
+    position: relative;
+    display: inline-block;
+}
+
+footer h4:after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 40px;
+    height: 2px;
+    background-color: var(--dourado);
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links li {
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    color: var(--cinza-claro);
+    transition: all 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: var(--dourado);
+    padding-left: 5px;
+}
+
+.newsletter-form {
+    margin-top: 20px;
+}
+
+.newsletter-form .form-control {
+    background-color: var(--cinza-escuro);
+    border: none;
+    color: var(--branco);
+    padding: 12px 15px;
+    border-radius: 2px 0 0 2px;
+}
+
+.newsletter-form .form-control:focus {
+    box-shadow: none;
+    background-color: #2a2a2a;
+}
+
+.newsletter-form .btn {
+    border-radius: 0 2px 2px 0;
+    padding: 12px 20px;
+}
+
+.copyright {
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 60px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    color: var(--cinza-claro);
+}
+
+/* Animações e Efeitos */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.fadeIn {
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes slideUp {
+    from { transform: translateY(50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.slideUp {
+    animation: slideUp 1s ease-in-out;
+}
+
+/* Responsividade */
+@media (max-width: 991px) {
+    .hero-section h1 {
+        font-size: 3rem;
+    }
+    
+    .hero-section .slogan {
+        font-size: 1.2rem;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .promo-card h3 {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 767px) {
+    .hero-section h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero-section {
+        min-height: 500px;
+    }
+    
+    .promo-card {
+        height: 250px;
+    }
+    
+    .drink-slide img {
+        height: 350px;
+    }
+    
+    .mapa iframe {
+        min-height: 300px;
+    }
+    
+    .contato-info {
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-section h1 {
+        font-size: 2rem;
+    }
+    
+    .hero-section .slogan {
+        font-size: 1rem;
+    }
+    
+    section {
+        padding: 60px 0;
+    }
+    
+    .btn {
+        padding: 10px 20px;
+    }
+}

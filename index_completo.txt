@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Santo Drink Bar - Bar e Petiscaria</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+<body>
+    <!-- Header e Navegação -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="./images/logo-removebg-preview.png" alt="Santo Drink Bar" class="nav-logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">Início</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="cardapio.html">Cardápio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="sobre.html">Sobre</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contato">Contato</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="overlay"></div>
+        <div class="container text-center">
+            <h1 data-aos="fade-up">SANTO DRINK BAR</h1>
+            <p class="slogan" data-aos="fade-up" data-aos-delay="300">NÃO NASCI PARA SER COMUM, NASCI PRA BEBER</p>
+            <a href="cardapio.html" class="btn btn-dourado btn-lg" data-aos="fade-up" data-aos-delay="500">Ver Cardápio</a>
+        </div>
+    </section>
+
+    <!-- Promoções Semanais -->
+    <section class="promos-section">
+        <div class="container">
+            <h2 class="section-title text-center" data-aos="fade-up">Promoções Semanais</h2>
+            <div class="row">
+                <div class="col-md-6" data-aos="fade-right">
+                    <div class="promo-card" style="background-image: url('images/double-gin.png')">
+                        <div class="countdown" id="countdown-quarta">
+                            <span id="dias-quarta">00</span>d
+                            <span id="horas-quarta">00</span>h
+                            <span id="minutos-quarta">00</span>m
+                        </div>
+                        <h3>DOUBLE GIN</h3>
+                        <p>Quartas-feiras</p>
+                    </div>
+                </div>
+                <div class="col-md-6" data-aos="fade-left">
+                    <div class="promo-card" style="background-image: url('images/double-caipirinha.png')">
+                        <div class="countdown" id="countdown-terca">
+                            <span id="dias-terca">00</span>d
+                            <span id="horas-terca">00</span>h
+                            <span id="minutos-terca">00</span>m
+                        </div>
+                        <h3>DOUBLE CAIPIRINHA</h3>
+                        <p>Terças-feiras</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Drinks Especiais -->
+    <section class="drinks-section">
+        <div class="container">
+            <h2 class="section-title text-center" data-aos="fade-up">Drinks Autorais</h2>
+            <div class="drink-slider" data-aos="fade-up">
+                <div class="drink-slide">
+                    <img src="images/drink1.png" alt="Drink Especial">
+                    <div class="drink-quote">SORRISOS BOBOS, ABRAÇOS LONGOS, OLHARES SINCEROS</div>
+                </div>
+                <div class="drink-slide">
+                    <img src="images/drink2.png" alt="Drink Especial">
+                    <div class="drink-quote">SEJA MAIS FORTE DO QUE A SUA MELHOR DESCULPA</div>
+                </div>
+                <div class="drink-slide">
+                    <img src="images/drink3.png" alt="Drink Especial">
+                    <div class="drink-quote">FALO NADA, SÓ OBSERVO</div>
+                </div>
+                <div class="drink-slide">
+                    <img src="images/drink4.png" alt="Drink Especial">
+                    <div class="drink-quote">ALÉM DE LINDA É CACHACEIRA</div>
+                </div>
+                <div class="drink-slide">
+                    <img src="images/drink5.png" alt="Drink Especial">
+                    <div class="drink-quote">QUE A FELICIDADE VIRE ROTINA</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gastronomia -->
+    <section class="gastronomia-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6" data-aos="fade-right">
+                    <h2 class="section-title">Gastronomia</h2>
+                    <p class="lead">Além dos melhores drinks, oferecemos uma seleção de petiscos e pratos especiais para complementar sua experiência.</p>
+                    <a href="cardapio.html#petiscos" class="btn btn-outline-dourado">Ver Petiscos</a>
+                </div>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <div class="food-feature">
+                        <img src="images/caldo.png" alt="Caldo especial" class="img-fluid">
+                        <div class="feature-text">
+                            <h3>Que tal um caldo?</h3>
+                            <p>Temos caldo diariamente</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Petiscos Destaque -->
+            <h3 class="text-center mb-4 mt-5" data-aos="fade-up">Petiscos em Destaque</h3>
+            <div class="petiscos-container" data-aos="fade-up">
+                <div class="petisco-card">
+                    <img src="./images/Torresmada e gelada.png" alt="Torresmo">
+                    <div class="petisco-info">
+                        <h4 class="petisco-title">Torresmo</h4>
+                        <p class="petisco-description">Torresmo crocante, servido com limão e molho especial</p>
+                    </div>
+                </div>
+                <div class="petisco-card">
+                    <img src="./images/frango-a-passarinho.webp" alt="Petisco">
+                    <div class="petisco-info">
+                        <h4 class="petisco-title">Frango à Passarinho</h4>
+                        <p class="petisco-description">Crocante por fora, suculento por dentro</p>
+                    </div>
+                </div>
+                <div class="petisco-card">
+                    <img src="./images/porcao-de-linguica-com-cebola.avif" alt="Petisco">
+                    <div class="petisco-info">
+                        <h4 class="petisco-title">Porção de Linguiça</h4>
+                        <p class="petisco-description">Linguiça artesanal grelhada com cebola e pimentão</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   <!-- Sobre o Santo -->
+<section class="sobre-section">
+    <div class="container">
+        <div class="sobre-content" data-aos="fade-right">
+            <h2 class="sobre-title">Sobre o Santo</h2>
+            <p class="sobre-text">O Santo Drink Bar nasceu da paixão pela mixologia e pela arte de criar experiências sensoriais únicas.</p>
+            <p class="sobre-text">Em nosso espaço, combinamos ambiente sofisticado, música selecionada e drinks autorais para proporcionar momentos inesquecíveis.</p>
+            <a href="sobre.html" class="action-button">Conheça nossa história</a>
+        </div>
+        <div class="sobre-image" data-aos="fade-left">
+            <img src="./images/fundo.png" alt="Interior do Santo Drink Bar">
+        </div>
+    </div>
+</section>
+
+
+    <!-- Contato -->
+    <section id="contato" class="contato-section">
+        <div class="container">
+            <h2 class="section-title text-center" data-aos="fade-up">Contato & Localização</h2>
+            <div class="row">
+                <div class="col-md-6" data-aos="fade-right">
+                    <div class="contato-info">
+                        <div class="info-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h4>Endereço</h4>
+                                <p>Rua José Polidorio, 536<br>Santa Lidia - Mauá</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-phone-alt"></i>
+                            <div>
+                                <h4>Telefone</h4>
+                                <p>(11) 97373-6133</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <h4>Horário de Funcionamento</h4>
+                                <ul class="horarios">
+                                    <li><span>Seg - Qui:</span> 18h às 00h</li>
+                                    <li><span>Sex - Sáb:</span> 18h às 02h</li>
+                                    <li><span>Domingo:</span> 17h às 23h</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="social-media">
+                            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-whatsapp"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6" data-aos="fade-left">
+                    <div class="mapa">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3655.0922070893734!2d-46.45999258529697!3d-23.635992784649717!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce6c36ca74f053%3A0x8b6a0c32b507316d!2sR.%20Jos%C3%A9%20Polidorio%2C%20536%20-%20Santa%20Lidia%2C%20Mau%C3%A1%20-%20SP!5e0!3m2!1spt-BR!2sbr!4v1616623499264!5m2!1spt-BR!2sbr" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <img src="images/logo-removebg-preview.png" alt="Santo Drink Bar" class="footer-logo">
+                    <p class="slogan-footer">NÃO NASCI PARA SER COMUM, NASCI PRA BEBER</p>
+                </div>
+                <div class="col-md-4">
+                    <h4>Links Rápidos</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Início</a></li>
+                        <li><a href="cardapio.html">Cardápio</a></li>
+                        <li><a href="sobre.html">Sobre</a></li>
+                        <li><a href="#contato">Contato</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h4>Newsletter</h4>
+                    <p>Receba nossas novidades e promoções</p>
+                    <form class="newsletter-form">
+                        <div class="input-group">
+                            <input type="email" class="form-control" placeholder="Seu e-mail">
+                            <button class="btn btn-dourado" type="submit">Assinar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Santo Drink Bar - Todos os direitos reservados</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        // Inicialização AOS (Animate On Scroll)
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+
+        // Navbar scroll effect
+        $(window).scroll(function() {
+            if ($(this).scrollTop() > 50) {
+                $('.navbar').addClass('scrolled');
+            } else {
+                $('.navbar').removeClass('scrolled');
+            }
+        });
+
+        // Inicialização do carrossel de drinks
+        $(document).ready(function(){
+            $('.drink-slider').slick({
+                slidesToShow: 3,
+                slidesToScroll: 1,
+                autoplay: true,
+                autoplaySpeed: 3000,
+                dots: true,
+                arrows: true,
+                centerMode: true,
+                centerPadding: '0',
+                responsive: [
+                    {
+                        breakpoint: 992,
+                        settings: {
+                            slidesToShow: 2,
+                            centerMode: false
+                        }
+                    },
+                    {
+                        breakpoint: 576,
+                        settings: {
+                            slidesToShow: 1,
+                            arrows: false
+                        }
+                    }
+                ]
+            });
+        });
+
+        // Contagem regressiva para promoções
+        function updateCountdown(dayOfWeek, countdownId) {
+            const now = new Date();
+            let nextDay = new Date();
+            
+            // Ajusta para o próximo dia da semana (0 = domingo, 1 = segunda, ..., 6 = sábado)
+            const daysUntil = (dayOfWeek - now.getDay() + 7) % 7;
+            nextDay.setDate(now.getDate() + (daysUntil === 0 ? 7 : daysUntil));
+            nextDay.setHours(18, 0, 0, 0); // Define para às 18h
+            
+            const timeRemaining = nextDay - now;
+            
+            // Conversão para dias, horas, minutos
+            const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
+            
+            // Atualiza o HTML
+            document.getElementById(`dias-${countdownId}`).textContent = String(days).padStart(2, '0');
+            document.getElementById(`horas-${countdownId}`).textContent = String(hours).padStart(2, '0');
+            document.getElementById(`minutos-${countdownId}`).textContent = String(minutes).padStart(2, '0');
+        }
+
+        // Atualiza contagem regressiva a cada segundo
+        setInterval(() => {
+            updateCountdown(2, 'terca');    // 2 = Terça-feira
+            updateCountdown(3, 'quarta');   // 3 = Quarta-feira
+        }, 1000);
+
+        // Inicia contagem imediatamente
+        updateCountdown(2, 'terca');
+        updateCountdown(3, 'quarta');
+    </script>
+
+    <!-- Bibliotecas essenciais -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollToPlugin.min.js"></script>
+
+    <!-- Scripts do site -->
+    <script src="js/main.js"></script>
+    <script src="js/cardapio.js"></script> <!-- Se necessário -->
+
+    <!-- Configuração do AOS -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            AOS.init({
+                duration: 600,
+                easing: 'ease-out',
+                once: true,
+                offset: 120,
+                delay: 100,
+                anchorPlacement: 'top-bottom'
+            });
+        });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log("Verificando seção 'Sobre':");
+            const sobreSection = document.querySelector('.sobre-section');
+            
+            if (sobreSection) {
+                console.log("Seção 'Sobre' encontrada!");
+                console.log("Altura:", sobreSection.offsetHeight);
+                console.log("Visibilidade:", window.getComputedStyle(sobreSection).visibility);
+                console.log("Display:", window.getComputedStyle(sobreSection).display);
+                console.log("Posição Y:", sobreSection.getBoundingClientRect().top + window.scrollY);
+                
+                // Forçar visibilidade
+                sobreSection.style.display = 'block';
+                sobreSection.style.visibility = 'visible';
+                sobreSection.style.opacity = '1';
+            } else {
+                console.log("Seção 'Sobre' não encontrada no DOM!");
+            }
+        });
+        </script>
+        
+</body>
+</html>

@@ -1,0 +1,761 @@
+/**
+ * Santo Drink Bar - Estilos do Cardápio
+ * Estilos específicos para a página de cardápio
+ */
+
+/* Cabeçalho do Cardápio */
+.cardapio-header {
+    position: relative;
+    background-image: url('../images/cardapio-header-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 50vh;
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    color: #fff;
+    margin-top: 70px;
+}
+
+.cardapio-header .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 1;
+}
+
+.cardapio-header .container {
+    position: relative;
+    z-index: 2;
+}
+
+.cardapio-header h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.cardapio-header p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* Navegação do Cardápio */
+.cardapio-nav {
+    background-color: #111;
+    padding: 15px 0;
+    position: sticky;
+    top: 70px;
+    z-index: 100;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.nav-tabs {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.nav-tab {
+    padding: 10px 20px;
+    color: #ccc;
+    text-decoration: none;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    border-bottom: 2px solid transparent;
+}
+
+.nav-tab:hover {
+    color: #D4AF37;
+}
+
+.nav-tab.active {
+    color: #D4AF37;
+    border-bottom: 2px solid #D4AF37;
+}
+
+/* Ferramentas do Cardápio */
+.cardapio-tools {
+    background-color: #222;
+    padding: 15px 0;
+    border-bottom: 1px solid #333;
+}
+
+.tools-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.filter-buttons {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.filter-label {
+    color: #ccc;
+    font-size: 0.9rem;
+    margin-right: 5px;
+}
+
+.filter-btn {
+    background-color: transparent;
+    border: 1px solid #444;
+    color: #ccc;
+    padding: 6px 12px;
+    border-radius: 30px;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.filter-btn:hover {
+    border-color: #D4AF37;
+    color: #D4AF37;
+}
+
+.filter-btn.active {
+    background-color: #D4AF37;
+    border-color: #D4AF37;
+    color: #000;
+}
+
+.view-toggle {
+    padding: 6px 12px;
+    background-color: transparent;
+    color: #D4AF37;
+    border: 1px solid #D4AF37;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.view-toggle:hover {
+    background-color: #D4AF37;
+    color: #000;
+}
+
+/* Seções do Cardápio */
+.cardapio-section {
+    padding: 60px 0;
+}
+
+.cardapio-section.bg-dark {
+    background-color: #222;
+    color: #fff;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2.5rem;
+    font-weight: 700;
+    position: relative;
+    padding-bottom: 15px;
+    color: #D4AF37;
+}
+
+.section-title:after {
+    content: '';
+    position: absolute;
+    width: 80px;
+    height: 3px;
+    background-color: #D4AF37;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.cardapio-category {
+    margin-bottom: 50px;
+}
+
+.cardapio-category h3 {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+    color: #D4AF37;
+    text-align: center;
+}
+
+/* Estilo unificado de cards */
+.menu-item, .promo-card, .caldo-card, .porcao-card, .drink-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color: rgba(20, 20, 20, 0.85);
+    border-radius: 8px;
+    position: relative;
+    transition: all 0.3s ease;
+    border: 1px dashed #D4AF37;
+    min-height: 120px;
+    overflow: hidden;
+}
+
+.menu-item:hover, .promo-card:hover, .caldo-card:hover, .porcao-card:hover, .drink-card:hover {
+    background-color: rgba(40, 40, 40, 0.9);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilo para badges */
+.card-badge {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 5px 10px;
+    color: #000;
+    font-weight: 600;
+    font-size: 0.9rem;
+    z-index: 1;
+    border-radius: 0 0 8px 0;
+}
+
+.badge-quarta, .badge-happy {
+    background-color: #f8d74c;
+}
+
+.badge-terca, .badge-combo {
+    background-color: #f8a14c;
+}
+
+.badge-caldo {
+    background-color: #4cb8f8;
+}
+
+.badge-porcao {
+    background-color: #f86c4c;
+}
+
+.badge-drink {
+    background-color: #9c4cf8;
+}
+
+/* Estilo para títulos e descrições */
+.card-content {
+    flex: 1;
+    padding-left: 10px;
+}
+
+.card-title {
+    font-size: 1.3rem;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #fff;
+}
+
+.card-description {
+    color: #aaa;
+    font-size: 0.95rem;
+    margin-bottom: 10px;
+}
+
+/* Estilo para preços */
+.card-price {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #D4AF37;
+    margin-left: 15px;
+    white-space: nowrap;
+    align-self: flex-start;
+}
+
+/* Layout para grid responsivo */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+    gap: 20px;
+}
+
+/* Itens do Menu */
+.menu-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.menu-item:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+.menu-item-info {
+    flex: 1;
+}
+
+.menu-item h4 {
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #fff;
+}
+
+.menu-item p {
+    color: #aaa;
+    font-size: 0.95rem;
+    margin-bottom: 10px;
+}
+
+.menu-item-price {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #D4AF37;
+    margin-left: 15px;
+    white-space: nowrap;
+}
+
+/* Itens com imagem - CORREÇÃO PARA USO CORRETO DE IMAGENS */
+.menu-item.with-image {
+    padding-left: 120px;
+    min-height: 120px;
+    position: relative;
+}
+
+.menu-item.with-image::before {
+    content: '';
+    position: absolute;
+    left: 15px;
+    top: 15px;
+    width: 90px;
+    height: 90px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    /* Adicionando uma cor de fundo temporária enquanto a imagem carrega */
+    background-color: rgba(60, 60, 60, 0.5);
+}
+
+/* Configuração específica para cada classe de drink */
+.menu-item.with-image.drink-1::before {
+    background-image: url('../images/drinks/drink-1.jpg');
+}
+
+.menu-item.with-image.drink-2::before {
+    background-image: url('../images/drinks/drink-2.jpg');
+}
+
+.menu-item.with-image.drink-3::before {
+    background-image: url('../images/drinks/drink-3.jpg');
+}
+
+.menu-item.with-image.drink-4::before {
+    background-image: url('../images/drinks/drink-4.jpg');
+}
+
+.menu-item.with-image.drink-5::before {
+    background-image: url('../images/drinks/drink-5.jpg');
+}
+
+/* Ou usar variável CSS definida inline no HTML */
+.menu-item.with-image[style*="--bg-image"]::before {
+    background-image: var(--bg-image);
+}
+
+.menu-item.with-image:hover::before {
+    transform: scale(1.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Lazy loading fade-in effect */
+.menu-item.with-image:not(.lazy-loaded)::before {
+    opacity: 0;
+}
+
+.menu-item.with-image.lazy-loaded::before {
+    opacity: 1;
+    transition: opacity 0.5s ease;
+}
+
+/* Detalhes expandidos */
+.details-btn {
+    background: none;
+    border: none;
+    color: #D4AF37;
+    font-size: 1rem;
+    cursor: pointer;
+    padding: 5px;
+    position: absolute;
+    bottom: 5px;
+    right: 10px;
+    transition: all 0.3s ease;
+}
+
+.details-btn:hover {
+    color: #fff;
+}
+
+.details-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    width: 100%;
+    margin-top: 10px;
+    opacity: 0;
+}
+
+.details-content.show {
+    max-height: 200px;
+    opacity: 1;
+    padding-top: 15px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.detail-text {
+    font-size: 0.9rem;
+    color: #bbb;
+    margin-bottom: 15px;
+}
+
+.detail-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btn-share {
+    background: none;
+    border: 1px solid #D4AF37;
+    color: #D4AF37;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-share:hover {
+    background-color: #D4AF37;
+    color: #000;
+}
+
+.drink-rating {
+    color: #D4AF37;
+    font-size: 0.9rem;
+}
+
+.drink-rating i {
+    margin-right: 2px;
+}
+
+.drink-rating span {
+    color: #888;
+    margin-left: 5px;
+}
+
+/* Tags para drinks */
+.drink-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.drink-tag {
+    display: inline-flex;
+    align-items: center;
+    background-color: rgba(212, 175, 55, 0.1);
+    color: #D4AF37;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+}
+
+.drink-tag i {
+    margin-right: 5px;
+}
+
+/* Novos estilos para tags/detalhes adicionais */
+.card-tag {
+    display: inline-flex;
+    align-items: center;
+    background-color: rgba(212, 175, 55, 0.1);
+    color: #D4AF37;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    margin-right: 5px;
+    margin-top: 5px;
+}
+
+.card-tag i {
+    margin-right: 5px;
+}
+
+/* Ingredientes em drinks */
+.drink-ingredients {
+    color: #888;
+    font-size: 0.85rem;
+    margin-top: 5px;
+    display: block;
+}
+
+/* Badges */
+.badge {
+    position: absolute;
+    top: -10px;
+    left: 15px;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    z-index: 10;
+}
+
+.badge-novo {
+    background-color: #28a745;
+    color: white;
+}
+
+.badge-popular {
+    background-color: #dc3545;
+    color: white;
+}
+
+.badge-recomendado {
+    background-color: #007bff;
+    color: white;
+}
+
+/* Itens especiais */
+.menu-item.special {
+    background-color: rgba(212, 175, 55, 0.1);
+    border: 1px dashed #D4AF37;
+}
+
+.promo-badge {
+    background-color: #D4AF37;
+    color: #000;
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-weight: 600;
+    margin-right: 10px;
+}
+
+/* Box de informações */
+.caldo-info {
+    margin-top: 30px;
+}
+
+.info-box {
+    background-color: rgba(0, 123, 255, 0.1);
+    border-left: 4px solid #007bff;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    border-radius: 4px;
+}
+
+.info-box i {
+    font-size: 1.5rem;
+    color: #007bff;
+    margin-right: 15px;
+}
+
+.info-box p {
+    margin: 0;
+    color: #ccc;
+}
+
+/* Visualização em Grade */
+.row.grid-view {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.row.grid-view .col-md-6 {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.row.grid-view .menu-item {
+    height: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.row.grid-view .menu-item-price {
+    margin-left: 0;
+    margin-top: 15px;
+}
+
+.row.grid-view .menu-item.with-image {
+    padding-top: 100px;
+    padding-left: 20px;
+}
+
+.row.grid-view .menu-item.with-image::before {
+    left: 50%;
+    top: 20px;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 80px;
+}
+
+.row.grid-view .menu-item.with-image:hover::before {
+    transform: translateX(-50%) scale(1.1);
+}
+
+/* Otimização para cards de drinks menores (como solicitado) */
+.menu-item.with-image {
+    padding: 15px;
+    padding-left: 105px;  /* Reduzido de 120px */
+    min-height: 100px;    /* Reduzido de 120px */
+    margin-bottom: 15px;  /* Reduzido de 20px */
+}
+
+.menu-item.with-image::before {
+    left: 12px;    /* Ajustado de 15px */
+    top: 12px;     /* Ajustado de 15px */
+    width: 80px;   /* Reduzido de 90px */
+    height: 80px;  /* Reduzido de 90px */
+}
+
+.menu-item h4 {
+    font-size: 1.05rem;   /* Reduzido de 1.2rem */
+    margin-bottom: 5px;   /* Reduzido de 8px */
+    line-height: 1.3;     /* Adicionado para melhorar legibilidade */
+    max-width: 95%;       /* Evita que títulos longos expandam o card */
+}
+
+.menu-item p {
+    font-size: 0.85rem;   /* Reduzido de 0.95rem */
+    margin-bottom: 6px;   /* Reduzido de 10px */
+    line-height: 1.4;     /* Melhora a legibilidade */
+}
+
+.drink-tags {
+    margin-top: 5px;      /* Reduzido de 10px */
+    gap: 5px;             /* Reduzido de 8px */
+}
+
+.drink-tag {
+    padding: 3px 6px;     /* Reduzido de 4px 8px */
+    font-size: 0.75rem;   /* Reduzido de 0.8rem */
+}
+
+.menu-item-price {
+    font-size: 1.2rem;    /* Reduzido de 1.3rem */
+}
+
+.details-btn {
+    bottom: 2px;          /* Ajustado de 5px */
+    right: 8px;           /* Ajustado de 10px */
+}
+
+/* Media Queries */
+@media (max-width: 992px) {
+    .card-grid {
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .cardapio-header h1 {
+        font-size: 2.5rem;
+    }
+    
+    .nav-tabs {
+        overflow-x: auto;
+        padding-bottom: 5px;
+        justify-content: flex-start;
+    }
+    
+    .menu-item.with-image {
+        padding-left: 20px;
+        padding-top: 105px; /* Ajustado para corresponder à imagem menor */
+    }
+    
+    .menu-item.with-image::before {
+        left: 50%;
+        top: 15px; /* Ajustado para alinhar melhor */
+        transform: translateX(-50%);
+    }
+    
+    .menu-item.with-image:hover::before {
+        transform: translateX(-50%) scale(1.1);
+    }
+    
+    .tools-wrapper {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .filter-buttons {
+        margin-bottom: 10px;
+        width: 100%;
+        overflow-x: auto;
+        padding-bottom: 5px;
+        justify-content: flex-start;
+    }
+}
+
+@media (max-width: 576px) {
+    .cardapio-header {
+        min-height: 300px;
+    }
+    
+    .cardapio-header h1 {
+        font-size: 2rem;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .menu-item {
+        flex-direction: column;
+    }
+    
+    .menu-item-price {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+    
+    .detail-actions {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    
+    .drink-rating {
+        margin-top: 10px;
+    }
+    
+    .card-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .card-price {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}

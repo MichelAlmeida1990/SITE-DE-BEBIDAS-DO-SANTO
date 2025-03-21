@@ -1,0 +1,284 @@
+/* css/contato.css */
+.contato-header {
+    position: relative;
+    height: 50vh;
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    background: url('../images/contato-header.jpg') center/cover no-repeat;
+    margin-bottom: 80px;
+}
+
+.contato-header .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8));
+}
+
+.contato-header .container {
+    position: relative;
+    z-index: 1;
+}
+
+.contato-header h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: var(--dourado);
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+    text-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+}
+
+.contato-header p {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--branco);
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+}
+
+.contato-principal {
+    padding: 80px 0;
+    background-color: rgba(26, 26, 26, 0.6);
+    backdrop-filter: blur(2px);
+}
+
+/* Estilo para informações de contato */
+.contato-info {
+    background-color: rgba(31, 31, 31, 0.8);
+    border-radius: 10px;
+    padding: 40px 30px;
+    height: 100%;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.info-item {
+    display: flex;
+    margin-bottom: 30px;
+}
+
+.info-item i {
+    font-size: 2rem;
+    color: var(--dourado);
+    margin-right: 20px;
+    min-width: 40px;
+    text-align: center;
+}
+
+.info-item h4 {
+    font-size: 1.2rem;
+    color: var(--dourado);
+    margin-bottom: 10px;
+}
+
+.info-item p {
+    margin: 0;
+    color: #e0e0e0;
+}
+
+ul.horarios {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+ul.horarios li {
+    margin-bottom: 5px;
+    color: #e0e0e0;
+    display: flex;
+    justify-content: space-between;
+    max-width: 200px;
+}
+
+ul.horarios li span {
+    font-weight: 600;
+    color: #fff;
+}
+
+.social-media h4 {
+    font-size: 1.2rem;
+    color: var(--dourado);
+    margin-bottom: 15px;
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+}
+
+.social-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background-color: #333;
+    border-radius: 50%;
+    color: var(--dourado);
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+}
+
+.social-link:hover {
+    background-color: var(--dourado);
+    color: var(--preto);
+    transform: translateY(-3px);
+}
+
+/* Estilo para formulário de contato */
+.contato-form {
+    background-color: rgba(31, 31, 31, 0.8);
+    border-radius: 10px;
+    padding: 40px 30px;
+    height: 100%;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #e0e0e0;
+}
+
+.form-control {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+    padding: 12px 15px;
+    color: #fff;
+    width: 100%;
+}
+
+.form-control:focus {
+    background-color: rgba(255, 255, 255, 0.15);
+    border-color: var(--dourado);
+    box-shadow: none;
+    outline: none;
+}
+
+.form-control::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.btn-dourado {
+    background-color: var(--dourado);
+    color: var(--preto);
+    font-weight: 600;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-dourado:hover {
+    background-color: #c79540;
+}
+
+/* Seção de Mapa */
+.mapa-section {
+    margin-top: 80px;
+}
+
+.mapa {
+    width: 100%;
+    height: 500px;
+}
+
+/* FAQ Section */
+.faq-section {
+    padding: 80px 0;
+    background-color: rgba(15, 15, 15, 0.75);
+    backdrop-filter: blur(3px);
+}
+
+.accordion-item {
+    margin-bottom: 15px;
+    background-color: rgba(31, 31, 31, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.accordion-header {
+    margin: 0;
+}
+
+.accordion-button {
+    background-color: rgba(31, 31, 31, 0.9);
+    color: var(--dourado);
+    font-size: 1.1rem;
+    font-weight: 600;
+    padding: 20px 25px;
+}
+
+.accordion-button:not(.collapsed) {
+    background-color: rgba(31, 31, 31, 1);
+    color: var(--dourado);
+    box-shadow: none;
+}
+
+.accordion-button:focus {
+    box-shadow: none;
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+.accordion-button::after {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23d4a762'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+}
+
+.accordion-body {
+    padding: 20px 25px;
+    background-color: rgba(31, 31, 31, 0.7);
+    color: #e0e0e0;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* Responsividade */
+@media (max-width: 992px) {
+    .contato-header h1 {
+        font-size: 3rem;
+    }
+    
+    .contato-header p {
+        font-size: 1.2rem;
+    }
+    
+    .contato-form {
+        margin-top: 50px;
+    }
+}
+
+@media (max-width: 768px) {
+    .contato-header {
+        min-height: 350px;
+    }
+    
+    .contato-header h1 {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .contato-header h1 {
+        font-size: 2rem;
+    }
+    
+    .social-link {
+        width: 35px;
+        height: 35px;
+        font-size: 1rem;
+    }
+    
+    .info-item i {
+        font-size: 1.5rem;
+    }
+}

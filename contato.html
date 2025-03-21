@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato - Santo Drink Bar</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/contato.css">
+</head>
+<body>
+    <!-- Header e Navegação -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="./images/logo-removebg-preview.png" alt="Santo Drink Bar" class="nav-logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Início</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="cardapio.html">Cardápio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="gastronomia.html">Gastronomia</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="sobre.html">Sobre</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="contato.html">Contato</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Cabeçalho do Contato -->
+    <section class="contato-header">
+        <div class="overlay"></div>
+        <div class="container text-center">
+            <h1 data-aos="fade-up">CONTATO & LOCALIZAÇÃO</h1>
+            <p data-aos="fade-up" data-aos-delay="300">Fale conosco e visite o Santo</p>
+        </div>
+    </section>
+
+    <!-- Contato -->
+    <section class="contato-principal">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5" data-aos="fade-right">
+                    <div class="contato-info">
+                        <h2 class="section-title">Informações de Contato</h2>
+                        <div class="info-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h4>Endereço</h4>
+                                <p>Rua José Polidorio, 536<br>Santa Lidia - Mauá</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-phone-alt"></i>
+                            <div>
+                                <h4>Telefone</h4>
+                                <p>(11) 97373-6133</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <h4>Horário de Funcionamento</h4>
+                                <ul class="horarios">
+                                    <li><span>Seg - Qui:</span> 18h às 00h</li>
+                                    <li><span>Sex - Sáb:</span> 18h às 02h</li>
+                                    <li><span>Domingo:</span> 17h às 23h</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="social-media">
+                            <h4>Redes Sociais</h4>
+                            <div class="social-links">
+                                <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                                <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#" class="social-link"><i class="fab fa-whatsapp"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-7" data-aos="fade-left">
+                    <div class="contato-form">
+                        <h2 class="section-title">Envie uma Mensagem</h2>
+                        <form id="formulario-contato">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="nome">Nome</label>
+                                        <input type="text" id="nome" name="nome" class="form-control" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="email">E-mail</label>
+                                        <input type="email" id="email" name="email" class="form-control" required>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="assunto">Assunto</label>
+                                <input type="text" id="assunto" name="assunto" class="form-control" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="mensagem">Mensagem</label>
+                                <textarea id="mensagem" name="mensagem" rows="5" class="form-control" required></textarea>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-dourado">Enviar Mensagem</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mapa -->
+    <section class="mapa-section">
+        <div class="container-fluid p-0">
+            <div class="row g-0">
+                <div class="col-12">
+                    <div class="mapa">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3655.0922070893734!2d-46.45999258529697!3d-23.635992784649717!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce6c36ca74f053%3A0x8b6a0c32b507316d!2sR.%20Jos%C3%A9%20Polidorio%2C%20536%20-%20Santa%20Lidia%2C%20Mau%C3%A1%20-%20SP!5e0!3m2!1spt-BR!2sbr!4v1616623499264!5m2!1spt-BR!2sbr" width="100%" height="500" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <h2 class="section-title text-center" data-aos="fade-up">Perguntas Frequentes</h2>
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    <div class="accordion" id="faqAccordion" data-aos="fade-up">
+                        <div class="accordion-item">
+                            <h3 class="accordion-header" id="headingOne">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+                                    É necessário fazer reserva?
+                                </button>
+                            </h3>
+                            <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Recomendamos reservas para sextas e sábados, principalmente para grupos maiores que 4 pessoas. Nos outros dias, geralmente temos mesas disponíveis, mas também aceitamos reservas para garantir seu lugar.
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <h3 class="accordion-header" id="headingTwo">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+                                    Vocês aceitam todos os cartões?
+                                </button>
+                            </h3>
+                            <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Sim, aceitamos todas as bandeiras de cartões de crédito e débito, além de PIX e dinheiro em espécie. Porém não trabalhamos com cheques.
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <h3 class="accordion-header" id="headingThree">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree">
+                                    Vocês têm opções vegetarianas?
+                                </button>
+                            </h3>
+                            <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-item">
+                                    <h3 class="accordion-header" id="headingThree">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree">
+                                            Vocês têm opções vegetarianas?
+                                        </button>
+                                    </h3>
+                                    <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                        <div class="accordion-body">
+                                            Sim, temos várias opções vegetarianas no cardápio, tanto de petiscos quanto de bebidas. Consulte nosso garçom sobre as opções disponíveis no dia.
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="accordion-item">
+                                    <h3 class="accordion-header" id="headingFour">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour">
+                                            Posso realizar eventos particulares no local?
+                                        </button>
+                                    </h3>
+                                    <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                        <div class="accordion-body">
+                                            Sim, oferecemos a possibilidade de reservar o espaço para eventos particulares como aniversários, confraternizações e eventos corporativos. Entre em contato conosco para mais informações sobre disponibilidade e preços.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        
+            <!-- Footer -->
+            <footer>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <img src="images/logo-removebg-preview.png" alt="Santo Drink Bar" class="footer-logo">
+                            <p class="slogan-footer">NÃO NASCI PARA SER COMUM, NASCI PRA BEBER</p>
+                        </div>
+                        <div class="col-md-4">
+                            <h4>Links Rápidos</h4>
+                            <ul class="footer-links">
+                                <li><a href="index.html">Início</a></li>
+                                <li><a href="cardapio.html">Cardápio</a></li>
+                                <li><a href="gastronomia.html">Gastronomia</a></li>
+                                <li><a href="sobre.html">Sobre</a></li>
+                                <li><a href="contato.html">Contato</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-md-4">
+                            <h4>Newsletter</h4>
+                            <p>Receba nossas novidades e promoções</p>
+                            <form class="newsletter-form">
+                                <div class="input-group">
+                                    <input type="email" class="form-control" placeholder="Seu e-mail">
+                                    <button class="btn btn-dourado" type="submit">Assinar</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="copyright">
+                        <p>&copy; 2025 Santo Drink Bar - Todos os direitos reservados</p>
+                    </div>
+                </div>
+            </footer>
+        
+            <!-- Scripts -->
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+            <script>
+                // Inicialização AOS (Animate On Scroll)
+                AOS.init({
+                    duration: 800,
+                    easing: 'ease-in-out',
+                    once: true
+                });
+        
+                // Navbar scroll effect
+                $(window).scroll(function() {
+                    if ($(this).scrollTop() > 50) {
+                        $('.navbar').addClass('scrolled');
+                    } else {
+                        $('.navbar').removeClass('scrolled');
+                    }
+                });
+        
+                // Formulário de contato
+                document.getElementById('formulario-contato').addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    alert('Mensagem enviada com sucesso! Entraremos em contato em breve.');
+                    this.reset();
+                });
+            </script>
+        </body>
+        </html>
+        

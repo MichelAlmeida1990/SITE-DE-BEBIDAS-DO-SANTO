@@ -1,0 +1,254 @@
+/* Variáveis CSS */
+:root {
+    --dourado: #d4a762;
+    --preto: #121212;
+    --cinza-escuro: #1f1f1f;
+    --cinza-claro: #555;
+    --branco: #ffffff;
+}
+
+/* Reset e Estilos Gerais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--preto);
+    color: var(--branco);
+}
+
+/* Navbar */
+.navbar {
+    transition: all 0.4s;
+    padding: 15px 0;
+    background-color: transparent;
+    z-index: 100;
+}
+
+.navbar.scrolled {
+    background-color: rgba(18, 18, 18, 0.95);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    padding: 12px 0;
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+}
+
+.nav-logo {
+    height: 50px;
+    transition: all 0.3s;
+}
+
+.navbar.scrolled .nav-logo {
+    height: 45px;
+}
+
+.navbar-nav .nav-link {
+    color: var(--branco) !important;
+    font-weight: 500;
+    margin: 0 10px;
+    transition: color 0.3s;
+    position: relative;
+}
+
+.navbar-nav .nav-link:hover, 
+.navbar-nav .nav-link.active {
+    color: var(--dourado) !important;
+}
+
+.navbar-nav .nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -3px;
+    left: 0;
+    background-color: var(--dourado);
+    transition: width 0.3s;
+}
+
+.navbar-nav .nav-link:hover::after,
+.navbar-nav .nav-link.active::after {
+    width: 100%;
+}
+
+/* Botões */
+.btn-dourado {
+    background-color: var(--dourado);
+    color: var(--preto);
+    font-weight: 600;
+    padding: 12px 30px;
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.btn-dourado:hover {
+    background-color: #c79540;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(212, 167, 98, 0.3);
+}
+
+.btn-outline-dourado {
+    background-color: transparent;
+    color: var(--dourado);
+    border: 2px solid var(--dourado);
+    font-weight: 600;
+    padding: 10px 28px;
+    transition: all 0.3s ease;
+}
+
+.btn-outline-dourado:hover {
+    background-color: var(--dourado);
+    color: var(--preto);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(212, 167, 98, 0.3);
+}
+
+.btn-outline-light {
+    border-width: 2px;
+    font-weight: 600;
+    padding: 10px 28px;
+    transition: all 0.3s ease;
+}
+
+.btn-outline-light:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
+}
+
+/* Seções */
+.section-title {
+    color: var(--dourado);
+    font-weight: 700;
+    margin-bottom: 50px;
+    position: relative;
+    display: inline-block;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background-color: var(--dourado);
+}
+
+.text-center .section-title::after {
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Footer */
+footer {
+    background-color: rgba(18, 18, 18, 0.95);
+    padding: 70px 0 30px;
+    position: relative;
+}
+
+.footer-logo {
+    height: 80px;
+    margin-bottom: 15px;
+}
+
+.slogan-footer {
+    color: var(--dourado);
+    font-weight: 600;
+    max-width: 300px;
+    font-size: 0.9rem;
+}
+
+footer h4 {
+    color: var(--dourado);
+    margin-bottom: 20px;
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links li {
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    color: var(--branco);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: var(--dourado);
+}
+
+.newsletter-form .input-group {
+    margin-top: 15px;
+}
+
+.newsletter-form .form-control {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: none;
+    color: white;
+    padding-left: 15px;
+    height: 45px;
+}
+
+.newsletter-form .form-control:focus {
+    box-shadow: none;
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+.newsletter-form .btn {
+    height: 45px;
+    padding-top: 0;
+    padding-bottom: 0;
+    display: flex;
+    align-items: center;
+}
+
+.copyright {
+    margin-top: 50px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.9rem;
+}
+
+/* Estilos Responsivos */
+@media (max-width: 992px) {
+    .navbar-collapse {
+        background-color: rgba(18, 18, 18, 0.95);
+        padding: 20px;
+        margin-top: 10px;
+        border-radius: 5px;
+    }
+    
+    .navbar-nav .nav-link {
+        padding: 10px 0;
+    }
+    
+    .slogan-footer {
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    footer h4 {
+        margin-top: 30px;
+    }
+    
+    .section-title {
+        font-size: 1.8rem;
+    }
+}
