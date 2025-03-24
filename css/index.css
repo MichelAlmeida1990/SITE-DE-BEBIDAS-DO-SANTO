@@ -27,7 +27,7 @@
 .hero-section h1 {
     font-size: 4.5rem;
     font-weight: 800;
-    color: white;
+    color: #d4a762;
     letter-spacing: 3px;
     margin-bottom: 20px;
     text-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
@@ -36,7 +36,7 @@
 .hero-section .slogan {
     font-size: 1.5rem;
     font-weight: 500;
-    color: var(--dourado);
+    color: var(--white);
     margin-bottom: 30px;
     letter-spacing: 1px;
 }
@@ -220,6 +220,7 @@
     transform: translateY(-10px);
 }
 
+/* Efeito hover nos ícones circulares */
 .icon-circle {
     width: 80px;
     height: 80px;
@@ -229,12 +230,21 @@
     align-items: center;
     justify-content: center;
     margin: 0 auto 20px;
+    transition: all 0.3s ease; /* Adiciona transição suave */
 }
 
-.icon-circle i {
-    font-size: 35px;
-    color: var(--preto);
+.icon-circle:hover {
+    background-color: #1E1E1E;
 }
+
+.icon-circle:hover i {
+    color: var(--dourado);
+}
+
+
+
+
+
 
 .destaque-card h3 {
     color: var(--dourado);
