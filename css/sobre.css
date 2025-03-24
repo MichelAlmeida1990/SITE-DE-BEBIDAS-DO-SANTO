@@ -122,6 +122,7 @@
     transform: translateY(-10px);
 }
 
+/* Efeito hover nos ícones circulares */
 .icon-circle {
     width: 80px;
     height: 80px;
@@ -131,12 +132,27 @@
     align-items: center;
     justify-content: center;
     margin: 0 auto 20px;
+    transition: all 0.3s ease; /* Adicionando transição suave */
 }
+
+/* Efeito ao passar o mouse */
+.icon-circle:hover {
+    background-color: var(--preto);
+    border: 2px solid var(--dourado);
+}
+
+.icon-circle:hover i {
+    color: var(--dourado);
+}
+
+
 
 .icon-circle i {
     font-size: 35px;
     color: var(--preto);
 }
+
+
 
 .valor-card h3 {
     color: var(--dourado);
