@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
@@ -10,313 +10,930 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/cardapio.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/cardapio.css">
 </head>
 <body>
-    <!-- Header e Navegação (atualizado) -->
-<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
-    <div class="container">
-        <a class="navbar-brand" href="index.html">
-            <img src="./images/logo-removebg-preview.png" alt="Santo Drink Bar" class="nav-logo">
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="index.html">Início</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link active" href="cardapio.html">Cardápio</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="gastronomia.html">Gastronomia</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="sobre.html">Sobre</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="contato.html">Contato</a>
-                </li>
-            </ul>
+    <!-- Header e Navegação -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="./images/layout/logo-removebg-preview.png" alt="Santo Drink Bar" class="nav-logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Início</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="cardapio.html">Cardápio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="gastronomia.html">Gastronomia</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="sobre.html">Sobre</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contato.html">Contato</a>
+                    </li>
+                </ul>
+            </div>
         </div>
-    </div>
-</nav>
+    </nav>
 
     <!-- Cabeçalho do Cardápio -->
     <section class="cardapio-header">
         <div class="overlay"></div>
         <div class="container text-center">
-            <h1 data-aos="fade-up">NOSSO CARDÁPIO</h1>
-            <p data-aos="fade-up" data-aos-delay="300">Drinks e petiscos preparados com paixão</p>
+            <h1 data-aos="fade-up">CARDÁPIO</h1>
+            <p data-aos="fade-up" data-aos-delay="300">Bebidas e petiscos para todos os gostos</p>
         </div>
     </section>
 
-    <!-- Navegação do Cardápio -->
+    <!-- Navegação do cardápio -->
     <section class="cardapio-nav">
         <div class="container">
             <div class="nav-tabs" data-aos="fade-up">
-                <a href="#drinks" class="nav-tab active">Drinks</a>
-                <a href="#cervejas" class="nav-tab">Cervejas</a>
-                <a href="#petiscos" class="nav-tab">Petiscos</a>
+                <a href="#promocoes" class="nav-tab">Promoções</a>
+                <a href="#porcoes" class="nav-tab">Porções</a>
+                <a href="#sobremesas" class="nav-tab">Sobremesas</a>
                 <a href="#caldos" class="nav-tab">Caldos</a>
-                <a href="#especiais" class="nav-tab">Especiais</a>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Barra de ferramentas do cardápio (NOVA) -->
-    <section class="cardapio-tools">
-        <div class="container">
-            <div class="tools-wrapper" data-aos="fade-up">
-                <div class="search-box">
-                    <input type="text" id="search-drinks" class="search-input" placeholder="Encontre seu drink favorito, ingrediente ou sabor...">
-                    <button class="search-btn"><i class="fas fa-search"></i></button>
-                </div>
-                
-                
-                
-                <!-- Filtros rápidos (já existentes) -->
-                <div class="filter-buttons">
-                    <!-- resto do código permanece igual -->
-            
-                
-                <!-- Toggle de visualização -->
-                <button class="view-toggle btn btn-sm btn-outline-dourado">
-                    <i class="fas fa-grip-horizontal"></i>
-                    <span>Visualizar em Grade</span>
-                </button>
+                <a href="#combos" class="nav-tab">Santo Combo</a>
+                <a href="#bebidas" class="nav-tab">Bebidas</a>
+                <a href="#drinks" class="nav-tab active">Drinks</a>
+                <a href="#shots" class="nav-tab">Shots</a>
+                <a href="#whisky" class="nav-tab">Whisky</a>
+                <a href="#vodka" class="nav-tab">Vodka</a>
+                <a href="#cervejas" class="nav-tab">Cervejas</a>
+                <a href="#caipirinhas" class="nav-tab">Caipirinhas</a>
+                <a href="#cachaca" class="nav-tab">Cachaças</a>
+                <a href="#cigarros" class="nav-tab">Cigarros</a>
             </div>
         </div>
     </section>
 
-    <!-- Conteúdo do Cardápio - Drinks -->
+ <!-- Campo de busca com ícone -->
+<div class="search-container with-search-icon">
+    <div class="search-input-wrapper">
+        <span class="search-icon">🔍</span>
+        <input type="text" id="search-input" placeholder="Buscar no cardápio..." autocomplete="off">
+        <button id="clear-search" class="clear-search-button" style="display: none;">X</button>
+    </div>
+</div>
+
+    
+
+    
+    
+
+    <!-- Seção Promoções -->
+    <section id="promocoes" class="cardapio-section">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Promoções</h2>
+
+            <div class="cardapio-category" data-aos="fade-up">
+                <div class="card-grid">
+                    <div class="drink-card">
+                        <span class="card-badge badge-destaque">Promoção</span>
+                        <div class="card-image">
+                            <img src="./images/bebidas/Gyn.png" alt="Gin em dobro">
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">Gin em dobro</h3>
+                            <p class="card-description">Promoção especial de gin</p>
+                            <span class="card-price">R$ 40,00</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Porções -->
+    <section id="porcoes" class="cardapio-section">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Porções</h2>
+
+            <div class="cardapio-category" data-aos="fade-up">
+                <div class="card-grid">
+                    <div class="porcao-card">
+                        <span class="card-badge badge-porcao">Porção</span>
+                        <div class="card-image">
+                            <img src="./images/porcoes/file de tilapia.jpg" alt="Porção Filé De Tilápia Molho Da Casa">
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">Porção Filé De Tilápia</h3>
+                            <span class="card-price">R$ 58,00</span>
+                        </div>
+                    </div>
+
+                    <div class="porcao-card">
+                        <span class="card-badge badge-porcao">Porção</span>
+                        <div class="card-image">
+                            <img src="./images/porcoes/Porção Meia De Filé De Tilápia Meia Camarão.png" alt="Porção Camarão Molho Da Casa">
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">Porção Camarão</h3>
+                            <span class="card-price">R$ 75,00</span>
+                        </div>
+                    </div>
+
+                    <div class="porcao-card">
+                        <span class="card-badge badge-porcao">Porção</span>
+                        <div class="card-image">
+                            <img src="./images/porcoes/Porção Meia De Filé De Tilápia Meia Camarão.png" alt="Porção Meia De Filé De Tilápia Meia Camarão">
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">Porção Meia De Filé De Tilápia Meia Camarão</h3>
+                            <span class="card-price">R$ 75,00</span>
+                        </div>
+                    </div>
+
+                    <div class="porcao-card">
+                        <span class="card-badge badge-porcao">Porção</span>
+                        <div class="card-image">
+                            <img src="./images/porcoes/frango-a-passarinho.png" alt="Porção Frango A Passarinho">
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">Porção Frango A Passarinho </h3>
+                            <span class="card-price"> Pequena R$ 30,00 Média R$ 40,00</span>
+                        </div>
+                    </div>
+
+                    <div class="porcao-card">
+                        <span class="card-badge badge-porcao">Porção</span>
+                        <div class="card-image">
+                            <img src="./images/porcoes/batata-frita.png" alt="Porção Batata Frita">
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">Porção Batata Frita</h3>
+                            <span class="card-price">Pequena R$ 22,00 Média R$ 28,00</span>
+                        </div>
+                    </div>
+
+                    <div class="porcao-card">
+                        <span class="card-badge badge-porcao">Porção</span>
+                        <div class="card-image">
+                            <img src="./images/porcoes/Porção Calabresa Defumada.png" alt="Porção Calabresa Defumada">
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">Porção Calabresa Defumada</h3>
+                            <span class="card-price">Pequena R$ 25,00 Média R$ 38,00</span>
+                        </div>
+                    </div>
+
+                    <div class="porcao-card">
+                        <span class="card-badge badge-porcao">Porção</span>
+                        <div class="card-image">
+                            <img src="./images/porcoes/Porção Mandioca.png" alt="Porção Mandioca">
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">Porção Mandioca</h3>
+                            <p class="card-description">Porção média</p>
+                            <span class="card-price">R$ 25,00</span>
+                        </div>
+                    </div>
+
+                    <div class="porcao-card">
+                        <span class="card-badge badge-porcao">Porção</span>
+                        <div class="card-image">
+                            <img src="./images/porcoes/porcao-frios.png" alt="Porção De Frios">
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">Porção De Frios</h3>
+                            <p class="card-description">Salame, queijo mussarela, queijo suíço, azeitona, mini salsicha, ovo de codorna, pimenta biquinho</p>
+                            <span class="card-price">R$ 48,00</span>
+                        </div>
+                    </div>
+
+                    <div class="porcao-card">
+                        <span class="card-badge badge-porcao">Porção</span>
+                        <div class="card-image">
+                            <img src="./images/porcoes/Porção Batata Frita Com Calabresa.png" alt="Porção Batata Frita Com Calabresa">
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">Porção Batata Frita Com Calabresa</h3>
+                            <span class="card-price">R$ 40,00</span>
+                        </div>
+                    </div>
+
+                    <div class="porcao-card">
+                        <span class="card-badge badge-porcao">Porção</span>
+                        <div class="card-image">
+                            <img src="./images/porcoes/Porção Batata Frita Com Frango.png" alt="Porção Batata Frita Com Frango">
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">Porção Batata Frita Com Frango</h3>
+                            <span class="card-price">R$ 40,00</span>
+                        </div>
+                    </div>
+
+                    <div class="porcao-card">
+                        <span class="card-badge badge-porcao">Porção</span>
+                        <div class="card-image">
+                            <img src="./images/porcoes/batata frita com mandioca.png" alt="Porção Batata Frita Com Mandioca">
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">Porção Batata Frita Com Mandioca</h3>
+                            <p class="card-description">Porção média</p>
+                            <span class="card-price">R$ 40,00</span>
+                        </div>
+                    </div>
+
+                    <div class="porcao-card">
+                        <span class="card-badge badge-porcao">Porção</span>
+                        <div class="card-image">
+                            <img src="./images/porcoes/Porção Batata Frita Com Anel De Cebola.png" alt="Porção Batata Frita Com Anel De Cebola">
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">Porção Batata Frita Com Anel De Cebola</h3>
+                            <span class="card-price">R$ 40,00</span>
+                        </div>
+                    </div>
+
+                    <div class="porcao-card">
+                        <span class="card-badge badge-porcao">Porção</span>
+                        <div class="card-image">
+                            <img src="./images/porcoes/Porção De Torresmo.png" alt="Porção De Torresmo">
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">Porção De Torresmo</h3>
+                            <p class="card-description">Torresmo com pimenta biquinho limão - pancetta</p>
+                            <span class="card-price">R$ 30,00</span>
+                        </div>
+                    </div>
+
+                    <div class="porcao-card">
+                        <span class="card-badge badge-porcao">Porção</span>
+                        <div class="card-image">
+                            <img src="./images/porcoes/Porção Anel De Cebola Molho.png" alt="Porção Anel De Cebola Molho">
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">Porção Anel De Cebola Molho</h3>
+                            <span class="card-price">R$ 25,00</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Sobremesas -->
+    <section id="sobremesas" class="cardapio-section">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Sobremesas</h2>
+
+            <div class="cardapio-category" data-aos="fade-up">
+                <div class="card-grid">
+                    <div class="doce-card">
+                        <span class="card-badge badge-destaque">Doce</span>
+                        <div class="card-image">
+                            <img src="./images/sobremesas/brigadeiro e beijinho gourmet.jfif" alt="Brigadeiro Gourmet">
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">Brigadeiro Gourmet</h3>
+                            <span class="card-price">R$ 12,00</span>
+                        </div>
+                    </div>
+
+                    <div class="doce-card">
+                        <span class="card-badge badge-destaque">Doce</span>
+                        <div class="card-image">
+                            <img src="./images/sobremesas/brigadeiro e beijinho gourmet.jfif" alt="Beijinho Gourmet">
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">Beijinho Gourmet</h3>
+                            <span class="card-price">R$ 12,00</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Caldos -->
+    <section id="caldos" class="cardapio-section">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Caldinhos</h2>
+
+            <div class="cardapio-category" data-aos="fade-up">
+                <div class="card-grid">
+                    <div class="caldo-card">
+                        <span class="card-badge badge-caldo">Caldo</span>
+                        <div class="card-image">
+                            <img src="./images/caldos/mandioquinha.jpg" alt="Caldinho Mandioquinha">
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">Caldinho Mandioquinha</h3>
+                            <span class="card-price">R$ 16,00</span>
+                        </div>
+                    </div>
+
+                    <div class="caldo-card">
+                        <span class="card-badge badge-caldo">Caldo</span>
+                        <div class="card-image">
+                            <img src="./images/caldos/caldo-feijao.jpg" alt="Caldinho Feijão">
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">Caldinho Feijão</h3>
+                            <span class="card-price">R$ 16,00</span>
+                        </div>
+                    </div>
+
+                    <div class="caldo-card">
+                        <span class="card-badge badge-caldo">Caldo</span>
+                        <div class="card-image">
+                            <img src="./images/caldos/caldo_de_mocoto_com_mandioca_9675_600.jpg" alt="Caldinho Mocotó">
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">Caldinho Mocotó</h3>
+                            <span class="card-price">R$ 16,00</span>
+                        </div>
+                    </div>
+
+                    <div class="caldo-card">
+                        <span class="card-badge badge-caldo">Caldo</span>
+                        <div class="card-image">
+                            <img src="./images/caldos/Receita-de-vaca-atolada-2.jpg" alt="Caldinho Vaca Atolada">
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">Caldinho Vaca Atolada</h3>
+                            <span class="card-price">R$ 16,00</span>
+                        </div>
+                    </div>
+
+                    <div class="caldo-card">
+                        <span class="card-badge badge-caldo">Caldo</span>
+                        <div class="card-image">
+                            <img src="./images/caldos/caldo-verde.jpg" alt="Caldinho Verde">
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">Caldinho Verde</h3>
+                            <span class="card-price">R$ 16,00</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Santo Combo -->
+    <section id="combos" class="cardapio-section">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Santo Combo</h2>
+
+            <div class="cardapio-category" data-aos="fade-up">
+                <div class="card-grid">
+                    <div class="combo-card">
+                        <span class="card-badge badge-destaque">Combo</span>
+                        <div class="card-image">
+                            <img src="./images/combos/combo iluminado.png" alt="Combo Iluminado">
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">Combo Iluminado</h3>
+                            <p class="card-description">Anel de Cebola + 4 Original no Balde</p>
+                            <span class="card-price">R$ 83,00</span>
+                        </div>
+                    </div>
+
+                    <div class="combo-card">
+                        <span class="card-badge badge-destaque">Combo</span>
+                        <div class="card-image">
+                            <img src="./images/combos/-combo do santo.png" alt="Combo Do Santo">
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">Combo Do Santo</h3>
+                            <p class="card-description">Frango a passarinho + 4 original no balde</p>
+                            <span class="card-price">R$ 88,00</span>
+                        </div>
+                    </div>
+
+                    <div class="combo-card">
+                        <span class="card-badge badge-destaque">Combo</span>
+                        <div class="card-image">
+                            <img src="./images/combos/combo abencoado.png" alt="Combo Abençoado">
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">Combo Abençoado</h3>
+                            <p class="card-description">Batata frita + 4 Original no Balde</p>
+                            <span class="card-price">R$ 83,00</span>
+                        </div>
+                    </div>
+
+                    <div class="combo-card">
+                        <span class="card-badge badge-destaque">Combo</span>
+                        <div class="card-image">
+                            <img src="./images/combos/combo bencao.png" alt="Combo Bencao">
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">Combo Bencao</h3>
+                            <p class="card-description">Batatas com Bacon e cheddar + 4 Original no Balde</p>
+                            <span class="card-price">R$ 86,00</span>
+                        </div>
+                    </div>
+
+                    <div class="combo-card">
+                        <span class="card-badge badge-destaque">Combo</span>
+                        <div class="card-image">
+                            <img src="./images/combos/combo altissimo.png" alt="Combo Altissimo">
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">Combo Altissimo</h3>
+                            <p class="card-description">Filé de Tilápia + 4 Original no Balde</p>
+                            <span class="card-price">R$ 116,00</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Bebidas -->
+    <section id="bebidas" class="cardapio-section">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Bebidas</h2>
+
+            <div class="cardapio-category" data-aos="fade-up">
+                <h3>Refrigerantes</h3>
+                <div class="card-grid">
+                    <div class="bebida-card">
+                        <div class="card-image">
+                            <img src="./images/bebidas/refrigerantes-em-lata-6105652d4fd4e.png" alt="Refrigerante">
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">Refrigerante</h3>
+                            <span class="card-price">R$ 6,00</span>
+                        </div>
+                    </div>
+
+                    <div class="bebida-card">
+                        <div class="card-image">
+                            <img src="./images/bebidas/red bull.png" alt="Red Bull">
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">Red Bull</h3>
+                            <span class="card-price">R$ 13,00</span>
+                        </div>
+                    </div>
+
+                    <div class="bebida-card">
+                        <div class="card-image">
+                            <img src="./images/bebidas/agua.png" alt="Água">
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">Água</h3>
+                            <span class="card-price">R$ 4,00</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Drinks -->
     <section id="drinks" class="cardapio-section">
         <div class="container">
             <h2 class="section-title" data-aos="fade-up">Drinks</h2>
-            
+
             <div class="cardapio-category" data-aos="fade-up">
-                <h3>Drinks Autorais</h3>
-                
-                <div class="card-grid">
-                    <!-- Card 1 - Modificado para nome curto -->
-                    <div class="drink-card">
-                        <span class="card-badge badge-novo">Novo</span>
-                        <div class="card-content">
-                            <h3 class="card-title">Devaneio</h3>
-                            <p class="card-description">Gin, xarope de morango, limão siciliano, água com gás</p>
-                            <span class="card-tag"><i class="fas fa-wine-glass-alt"></i> Refrescante</span>
-                            <span class="card-tag"><i class="fas fa-fire"></i> 16% alc.</span>
-                        </div>
-                        <span class="card-price">R$ 28</span>
-                    </div>
-                    
-                    <!-- Card 2 - Modificado para nome curto -->
-                    <div class="drink-card">
-                        <div class="card-content">
-                            <h3 class="card-title">Resiliência</h3>
-                            <p class="card-description">Gin, licor de maracujá, xarope de maracujá, suco de limão</p>
-                            <span class="card-tag"><i class="fas fa-lemon"></i> Cítrico</span>
-                            <span class="card-tag"><i class="fas fa-fire"></i> 18% alc.</span>
-                        </div>
-                        <span class="card-price">R$ 28</span>
-                    </div>
-                    
-                    <!-- Card 3 - Modificado para nome curto -->
-                    <div class="drink-card">
-                        <span class="card-badge badge-popular">Popular</span>
-                        <div class="card-content">
-                            <h3 class="card-title">Contemplação</h3>
-                            <p class="card-description">Gin, licor de menta, limão, água tônica</p>
-                            <span class="card-tag"><i class="fas fa-leaf"></i> Herbal</span>
-                            <span class="card-tag"><i class="fas fa-fire"></i> 16% alc.</span>
-                        </div>
-                        <span class="card-price">R$ 28</span>
-                    </div>
-                    
-                    <!-- Card 4 - Modificado para nome curto -->
-                    <div class="drink-card">
-                        <div class="card-content">
-                            <h3 class="card-title">Sedução</h3>
-                            <p class="card-description">Cachaça envelhecida, morango, limão, xarope de açúcar</p>
-                            <span class="card-tag"><i class="fas fa-apple-alt"></i> Frutado</span>
-                            <span class="card-tag"><i class="fas fa-fire"></i> 22% alc.</span>
-                        </div>
-                        <span class="card-price">R$ 26</span>
-                    </div>
-                    
-                    <!-- Card 5 - Modificado para nome curto -->
-                    <div class="drink-card">
-                        <span class="card-badge badge-recomendado">Recomendado</span>
-                        <div class="card-content">
-                            <h3 class="card-title">Euforia</h3>
-                            <p class="card-description">Gin, licor de pêssego, xarope de maçã verde, água tônica</p>
-                            <span class="card-tag"><i class="fas fa-apple-alt"></i> Frutado</span>
-                            <span class="card-tag"><i class="fas fa-fire"></i> 17% alc.</span>
-                        </div>
-                        <span class="card-price">R$ 28</span>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="cardapio-category" data-aos="fade-up">
-                <h3>Clássicos</h3>
-                
+                <h3>Especiais da Casa</h3>
+
                 <div class="card-grid">
                     <div class="drink-card">
-                        <span class="card-badge badge-drink">Clássico</span>
-                        <div class="card-content">
-                            <h3 class="card-title">Gin Tônica</h3>
-                            <p class="card-description">Gin, água tônica, limão e especiarias</p>
-                            <span class="card-tag"><i class="fas fa-leaf"></i>Aromático</span>
-                            <span class="card-tag"><i class="fas fa-wine-glass-alt"></i>15% alc.</span>
+                        <span class="card-badge badge-destaque">Destaque</span>
+                        <div class="card-image">
+                            <img src="./images/bebidas/gin tropical.png" alt="Gin Tropical">
                         </div>
-                        <span class="card-price">R$ 24</span>
-                    </div>
-                    
-                    <div class="drink-card">
-                        <span class="card-badge badge-drink">Clássico</span>
                         <div class="card-content">
-                            <h3 class="card-title">Mojito</h3>
-                            <p class="card-description">Rum, limão, hortelã, açúcar e água com gás</p>
-                            <span class="card-tag"><i class="fas fa-leaf"></i>Herbal</span>
-                            <span class="card-tag"><i class="fas fa-wine-glass-alt"></i>14% alc.</span>
+                            <h3 class="card-title">Gin Tropical</h3>
+                            <p class="card-description">Gin, limão siciliano, fruta e energético</p>
+                            <span class="card-price">R$ 40,00</span>
                         </div>
-                        <span class="card-price">R$ 22</span>
                     </div>
-                    
+
                     <div class="drink-card">
-                        <span class="card-badge badge-drink">Clássico</span>
+                        <span class="card-badge badge-drink">Drink</span>
+                        <div class="card-image">
+                            <img src="./images/bebidas/GIN ROSA.png" alt="Gin Beefeater Pink">
+                        </div>
                         <div class="card-content">
-                            <h3 class="card-title">Caipirinha</h3>
-                            <p class="card-description">Cachaça, limão, açúcar</p>
-                            <span class="card-tag"><i class="fas fa-lemon"></i>Cítrico</span>
-                            <span class="card-tag"><i class="fas fa-wine-glass-alt"></i>20% alc.</span>
+                            <h3 class="card-title">Gin Beefeater Pink</h3>
+                            <p class="card-description">Gin Beefeater Pink + Red Bull + Fruta</p>
+                            <span class="card-price">R$ 45,00</span>
                         </div>
-                        <span class="card-price">R$ 18</span>
                     </div>
-                    
+
                     <div class="drink-card">
-                        <span class="card-badge badge-drink">Clássico</span>
+                        <span class="card-badge badge-drink">Drink</span>
+                        <div class="card-image">
+                            <img src="./images/bebidas/drink5.png" alt="Sex On The Beach">
+                        </div>
                         <div class="card-content">
-                            <h3 class="card-title">Caipirosca</h3>
-                            <p class="card-description">Vodka, limão, açúcar</p>
-                            <span class="card-tag"><i class="fas fa-lemon"></i>Cítrico</span>
-                            <span class="card-tag"><i class="fas fa-wine-glass-alt"></i>18% alc.</span>
+                            <h3 class="card-title">Sex On The Beach</h3>
+                            <p class="card-description">Vodka, suco de laranja, licor de pêssego e groselha</p>
+                            <span class="card-price">R$ 25,00</span>
                         </div>
-                        <span class="card-price">R$ 20</span>
                     </div>
-                    
+
                     <div class="drink-card">
-                        <span class="card-badge badge-drink">Clássico</span>
+                        <span class="card-badge badge-drink">Drink</span>
+                        <div class="card-image">
+                            <img src="./images/bebidas/drink3.png" alt="Chuck Norris">
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">Chuck Norris</h3>
+                            <p class="card-description">Vodka, cacau, gelo de coco e água de coco</p>
+                            <span class="card-price">R$ 25,00</span>
+                        </div>
+                    </div>
+
+                    <div class="drink-card">
+                        <span class="card-badge badge-drink">Drink</span>
+                        <div class="card-image">
+                            <img src="./images/bebidas/Malibu.png" alt="Malibu">
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">Malibu</h3>
+                            <p class="card-description">Malibu, gelo de coco, red bull de coco</p>
+                            <span class="card-price">R$ 25,00</span>
+                        </div>
+                    </div>
+
+                    <div class="drink-card">
+                        <span class="card-badge badge-drink">Drink</span>
+                        <div class="card-image">
+                            <img src="./images/bebidas/drinks.png" alt="Moscow Mule">
+                        </div>
                         <div class="card-content">
                             <h3 class="card-title">Moscow Mule</h3>
-                            <p class="card-description">Vodka, limão, xarope de gengibre, água com gás</p>
-                            <span class="card-tag"><i class="fas fa-pepper-hot"></i>Picante</span>
-                            <span class="card-tag"><i class="fas fa-wine-glass-alt"></i>16% alc.</span>
+                            <p class="card-description">Vodka, limão siciliano, fruta e energético</p>
+                            <span class="card-price">R$ 40,00</span>
                         </div>
-                        <span class="card-price">R$ 24</span>
-                    </div>
-                    
-                    <div class="drink-card">
-                        <span class="card-badge badge-drink">Clássico</span>
-                        <div class="card-content">
-                            <h3 class="card-title">Negroni</h3>
-                            <p class="card-description">Gin, Campari, vermute rosso</p>
-                            <span class="card-tag"><i class="fas fa-glass-whiskey"></i>Encorpado</span>
-                            <span class="card-tag"><i class="fas fa-wine-glass-alt"></i>24% alc.</span>
-                        </div>
-                        <span class="card-price">R$ 26</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Conteúdo do Cardápio - Cervejas -->
-    <section id="cervejas" class="cardapio-section bg-dark">
+    <!-- Seção Shots -->
+    <section id="shots" class="cardapio-section">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Outros (Shots - Pra Esquentar)</h2>
+
+            <div class="cardapio-category" data-aos="fade-up">
+                <div class="card-grid">
+                    <div class="shot-card">
+                        <span class="card-badge badge-shot">Shot</span>
+                        <div class="card-image">
+                            <img src="./images/bebidas/licor 43.png" alt="Shot Licor 43">
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">Shot Licor 43</h3>
+                            <span class="card-price">R$ 18,00</span>
+                        </div>
+                    </div>
+
+                    <div class="shot-card">
+                        <span class="card-badge badge-shot">Shot</span>
+                        <div class="card-image">
+                            <img src="./images/bebidas/licor 43 choc.png" alt="Shot Licor 43 Chocolat">
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">Shot Licor 43 Chocolat</h3>
+                            <span class="card-price">R$ 28,00</span>
+                        </div>
+                    </div>
+
+                    <div class="shot-card">
+                        <span class="card-badge badge-shot">Shot</span>
+                        <div class="card-image">
+                            <img src="./images/bebidas/curacao blue.png" alt="Shot Curaçau Blue">
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">Shot Curaçau Blue</h3>
+                            <span class="card-price">R$ 10,00</span>
+                        </div>
+                    </div>
+
+                    <div class="shot-card">
+                        <span class="card-badge badge-shot">Shot</span>
+                        <div class="card-image">
+                            <img src="./images/bebidas/Shot Ballena.png" alt="Shot Ballena">
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">Shot Ballena</h3>
+                            <span class="card-price">R$ 22,00</span>
+                        </div>
+                    </div>
+
+                    <div class="shot-card">
+                        <span class="card-badge badge-shot">Shot</span>
+                        <div class="card-image">
+                            <img src="./images/bebidas/Shot Licor Dose De Leite Don Luiz.png" alt="Shot Licor Dose De Leite Don Luiz">
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">Shot Licor Dose De Leite Don Luiz</h3>
+                            <span class="card-price">R$ 18,00</span>
+                        </div>
+                    </div>
+
+                    <div class="shot-card">
+                        <span class="card-badge badge-shot">Shot</span>
+                        <div class="card-image">
+                            <img src="./images/bebidas/absinto.png" alt="Shot absinto">
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">Shot Absinto</h3>
+                            <span class="card-price">R$ 12,00</span>
+                        </div>
+                    </div>
+
+                    <div class="shot-card">
+                        <span class="card-badge badge-shot">Shot</span>
+                        <div class="card-image">
+                            <img src="./images/bebidas/tequila ouro.png" alt="Shot Tequila Ouro">
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">Shot Tequila Ouro</h3>
+                            <span class="card-price">R$ 18,00</span>
+                        </div>
+                    </div>
+
+                    <div class="shot-card">
+                        <span class="card-badge badge-shot">Shot</span>
+                        <div class="card-image">
+                            <img src="./images/bebidas/tequila prata.jpg" alt="Shot Tequila Prata">
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">Shot Tequila Prata</h3>
+                            <span class="card-price">R$ 18,00</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Whisky -->
+    <section id="whisky" class="cardapio-section">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Whisky</h2>
+
+            <div class="cardapio-category" data-aos="fade-up">
+                <div class="card-grid">
+                    <div class="whisky-card">
+                        <div class="card-image">
+                            <img src="./images/bebidas/Dose de Red Labe.png" alt="Red Label Dose">
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">Red Label Dose</h3>
+                            <span class="card-price">R$ 18,00</span>
+                        </div>
+                    </div>
+
+                    <div class="whisky-card">
+                        <div class="card-image">
+                            <img src="./images/bebidas/Black Label Dose.png" alt="Black Label Dose">
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">Black Label Dose</h3>
+                            <span class="card-price">R$ 35,00</span>
+                        </div>
+                    </div>
+
+                    <div class="whisky-card">
+                        <div class="card-image">
+                            <img src="./images/bebidas/garrafa jack.png" alt="Jack Daniel's Dose">
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">Jack Daniel's Dose</h3>
+                            <span class="card-price">R$ 30,00</span>
+                        </div>
+                    </div>
+
+                    <div class="whisky-card">
+                        <div class="card-image">
+                            <img src="./images/bebidas/chivas.webp" alt="Chivas Dose">
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">Chivas Dose</h3>
+                            <span class="card-price">R$ 30,00</span>
+                        </div>
+                    </div>
+
+                    <div class="whisky-card">
+                        <div class="card-image">
+                            <img src="./images/bebidas/Buchana’s dose.png" alt="Buchanan's Dose">
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">Buchanan's Dose</h3>
+                            <span class="card-price">R$ 35,00</span>
+                        </div>
+                    </div>
+
+                    <div class="whisky-card">
+                        <div class="card-image">
+                            <img src="./images/bebidas/Dose de Red Labe.png" alt="Red Label Garrafa">
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">Red Label Garrafa</h3>
+                            <span class="card-price">R$ 150,00</span>
+                        </div>
+                    </div>
+
+                    <div class="whisky-card">
+                        <div class="card-image">
+                            <img src="./images/bebidas/Black Label Dose.png" alt="Black Label Garrafa">
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">Black Label Garrafa</h3>
+                            <span class="card-price">R$ 250,00</span>
+                        </div>
+                    </div>
+
+                    <div class="whisky-card">
+                        <div class="card-image">
+                            <img src="./images/bebidas/garrafa jack.png" alt="Jack Daniel's Garrafa">
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">Jack Daniel's Garrafa</h3>
+                            <span class="card-price">R$ 200,00</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Vodka -->
+    <section id="vodka" class="cardapio-section">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Vodka</h2>
+
+            <div class="cardapio-category" data-aos="fade-up">
+                <div class="card-grid">
+                    <div class="vodka-card">
+                        <div class="card-image">
+                            <img src="./images/bebidas/smirnoff.png" alt="Smirnoff Dose">
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">Smirnoff Dose</h3>
+                            <span class="card-price">R$ 12,00</span>
+                        </div>
+                    </div>
+
+                    <div class="vodka-card">
+                        <div class="card-image">
+                            <img src="./images/bebidas/absolut.png" alt="Absolut Dose">
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">Absolut Dose</h3>
+                            <span class="card-price">R$ 20,00</span>
+                        </div>
+                    </div>
+
+                    <div class="vodka-card">
+                        <div class="card-image">
+                            <img src="./images/bebidas/ciroc.png" alt="Ciroc Dose">
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">Ciroc Dose</h3>
+                            <span class="card-price">R$ 30,00</span>
+                        </div>
+                    </div>
+
+                    <div class="vodka-card">
+                        <div class="card-image">
+                            <img src="./images/bebidas/smirnoff.png" alt="Smirnoff Garrafa">
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">Smirnoff Garrafa</h3>
+                            <span class="card-price">R$ 100,00</span>
+                        </div>
+                    </div>
+
+                    <div class="vodka-card">
+                        <div class="card-image">
+                            <img src="./images/bebidas/absolut.png" alt="Absolut Garrafa">
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">Absolut Garrafa</h3>
+                            <span class="card-price">R$ 150,00</span>
+                        </div>
+                    </div>
+
+                    <div class="vodka-card">
+                        <div class="card-image">
+                            <img src="./images/bebidas/ciroc.png" alt="Ciroc Garrafa">
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">Ciroc Garrafa</h3>
+                            <span class="card-price">R$ 250,00</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Cervejas -->
+    <section id="cervejas" class="cardapio-section">
         <div class="container">
             <h2 class="section-title" data-aos="fade-up">Cervejas</h2>
-            
+
             <div class="cardapio-category" data-aos="fade-up">
-                <h3>Tradicionais</h3>
-                
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="menu-item">
-                            <div class="menu-item-info">
-                                <h4>Heineken</h4>
-                                <p>Long Neck 330ml</p>
-                            </div>
-                            <div class="menu-item-price">R$ 12</div>
+                <div class="card-grid">
+                    <div class="cerveja-card">
+                        <div class="card-image">
+                            <img src="./images/bebidas/ORIGINAL 600.png" alt="Original 600ml">
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">Original 600ml</h3>
+                            <span class="card-price">R$ 15,00</span>
+                        </div>
+                    </div>
+
+                    <div class="cerveja-card">
+                        <div class="card-image">
+                            <img src="./images/bebidas/HEINEKEN 600.png" alt="Heineken 600ml">
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">Heineken 600ml</h3>
+                            <span class="card-price">R$ 16,00</span>
+                        </div>
+                    </div>
+
+                    <div class="cerveja-card">
+                        <div class="card-image">
+                            <img src="./images/bebidas/brahma-duplo-malte-600ml-.jpg" alt="Brahma Duplo Malte 600ml">
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">Brahma Duplo Malte 600ml</h3>
+                            <span class="card-price">R$ 14,00</span>
+                        </div>
+                    </div>
+
+                    <div class="cerveja-card">
+                        <div class="card-image">
+                            <img src="./images/bebidas/SPATEN 600.png" alt="Spaten 600ml">
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">Spaten 600ml</h3>
+                            <span class="card-price">R$ 16,00</span>
                         </div>
                     </div>
                     
-                    <div class="col-md-6">
-                        <div class="menu-item">
-                            <div class="menu-item-info">
-                                <h4>Budweiser</h4>
-                                <p>Long Neck 330ml</p>
-                            </div>
-                            <div class="menu-item-price">R$ 12</div>
+                    <div class="cerveja-card">
+                        <div class="card-image">
+                            <img src="./images/bebidas/BUDWEISER 600.png" alt="Budweiser 600ml">
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">Budweiser 600ml</h3>
+                            <span class="card-price">R$ 16,00</span>
                         </div>
                     </div>
-                    
-                    <div class="col-md-6">
-                        <div class="menu-item">
-                            <div class="menu-item-info">
-                                <h4>Stella Artois</h4>
-                                <p>Long Neck 330ml</p>
-                            </div>
-                            <div class="menu-item-price">R$ 12</div>
+
+                    <div class="cerveja-card">
+                        <div class="card-image">
+                            <img src="./images/bebidas/SKOL 600.png" alt="Brahma 600ml">
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">Skol 600ml </h3>
+                            <span class="card-price">R$ 16,00</span>
                         </div>
                     </div>
-                    
-                    <div class="col-md-6">
-                        <div class="menu-item">
-                            <div class="menu-item-info">
-                                <h4>Corona</h4>
-                                <p>Long Neck 330ml</p>
-                            </div>
-                            <div class="menu-item-price">R$ 14</div>
+
+                    <div class="cerveja-card">
+                        <div class="card-image">
+                            <img src="./images/bebidas/balde original.jpg" alt="Balde 4 Original">
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">Balde 4 Original</h3>
+                            <span class="card-price">R$ 58,00</span>
                         </div>
                     </div>
-                </div>
-            </div>
-            
-            <div class="cardapio-category" data-aos="fade-up">
-                <h3>Especiais</h3>
-                
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="menu-item">
-                            <div class="menu-item-info">
-                                <h4>IPA</h4>
-                                <p>Garrafa 500ml</p>
-                            </div>
-                            <div class="menu-item-price">R$ 25</div>
+
+                    <div class="cerveja-card">
+                        <div class="card-image">
+                            <img src="./images/bebidas/balde heineken.jpg" alt="Balde 4 Heineken">
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">Balde 4 Heineken</h3>
+                            <span class="card-price">R$ 62,00</span>
                         </div>
                     </div>
-                    
-                    <div class="col-md-6">
-                        <div class="menu-item">
-                            <div class="menu-item-info">
-                                <h4>Weiss</h4>
-                                <p>Garrafa 500ml</p>
-                            </div>
-                            <div class="menu-item-price">R$ 24</div>
+
+                    <div class="cerveja-card">
+                        <div class="card-image">
+                            <img src="./images/bebidas/balde duplo malte.webp" alt="Balde 4 Brahma Duplo Malte">
                         </div>
-                    </div>
-                    
-                    <div class="col-md-6">
-                        <div class="menu-item">
-                            <div class="menu-item-info">
-                                <h4>Stout</h4>
-                                <p>Garrafa 500ml</p>
-                            </div>
-                            <div class="menu-item-price">R$ 26</div>
+                        <div class="card-content">
+                            <h3 class="card-title">Balde 4 Brahma Duplo Malte</h3>
+                            <span class="card-price">R$ 54,00</span>
                         </div>
                     </div>
                 </div>
@@ -324,180 +941,260 @@
         </div>
     </section>
 
-    <!-- Conteúdo do Cardápio - Petiscos -->
-    <section id="petiscos" class="cardapio-section">
+    <!-- Seção Caipirinhas -->
+    <section id="caipirinhas" class="cardapio-section">
         <div class="container">
-            <h2 class="section-title" data-aos="fade-up">Petiscos</h2>
-            
+            <h2 class="section-title" data-aos="fade-up">Caipirinhas</h2>
+
             <div class="cardapio-category" data-aos="fade-up">
-                <h3>Porções</h3>
-                
                 <div class="card-grid">
-                    <div class="porcao-card">
-                        <span class="card-badge badge-porcao">Porção</span>
-                        <div class="card-content">
-                            <h3 class="card-title">Torresmo</h3>
-                            <p class="card-description">Torresmo crocante, acompanha limão e molho especial</p>
+                    <div class="caipirinha-card">
+                        <div class="card-image">
+                            <img src="./images/bebidas/caipirinha.png" alt="Caipirinha Cachaça Limão">
                         </div>
-                        <span class="card-price">R$ 35</span>
+                        <div class="card-content">
+                            <h3 class="card-title">Caipirinha Cachaça Limão</h3>
+                            <span class="card-price">R$ 15,00</span>
+                        </div>
                     </div>
-                    
-                    <div class="porcao-card">
-                        <span class="card-badge badge-porcao">Porção</span>
-                        <div class="card-content">
-                            <h3 class="card-title">Frango à Passarinho</h3>
-                            <p class="card-description">Crocante por fora, suculento por dentro, com molho de pimenta da casa</p>
+
+                    <div class="caipirinha-card">
+                        <div class="card-image">
+                            <img src="./images/bebidas/caipirinha.png" alt="Caipirinha Cachaça Morango">
                         </div>
-                        <span class="card-price">R$ 38</span>
+                        <div class="card-content">
+                            <h3 class="card-title">Caipirinha Cachaça Morango</h3>
+                            <span class="card-price">R$ 15,00</span>
+                        </div>
                     </div>
-                    
-                    <div class="porcao-card">
-                        <span class="card-badge badge-porcao">Porção</span>
-                        <div class="card-content">
-                            <h3 class="card-title">Batata Frita</h3>
-                            <p class="card-description">Batata frita crocante com molho especial</p>
+
+                    <div class="caipirinha-card">
+                        <div class="card-image">
+                            <img src="./images/bebidas/caipirinha.png" alt="Caipirinha Cachaça Abacaxi">
                         </div>
-                        <span class="card-price">R$ 30</span>
+                        <div class="card-content">
+                            <h3 class="card-title">Caipirinha Cachaça Abacaxi</h3>
+                            <span class="card-price">R$ 15,00</span>
+                        </div>
                     </div>
-                    
-                    <div class="porcao-card">
-                        <span class="card-badge badge-porcao">Porção</span>
-                        <div class="card-content">
-                            <h3 class="card-title">Porção de Linguiça</h3>
-                            <p class="card-description">Linguiça artesanal grelhada com cebola e pimentão</p>
+
+                    <div class="caipirinha-card">
+                        <div class="card-image">
+                            <img src="./images/bebidas/caipirinha.png" alt="Caipirinha Vodka Limão">
                         </div>
-                        <span class="card-price">R$ 36</span>
+                        <div class="card-content">
+                            <h3 class="card-title">Caipirinha Vodka Limão</h3>
+                            <span class="card-price">R$ 20,00</span>
+                        </div>
                     </div>
-                    
-                    <div class="porcao-card">
-                        <span class="card-badge badge-porcao">Porção</span>
-                        <div class="card-content">
-                            <h3 class="card-title">Bolinho de Bacalhau</h3>
-                            <p class="card-description">6 unidades de bolinhos de bacalhau</p>
+
+                    <div class="caipirinha-card">
+                        <div class="card-image">
+                            <img src="./images/bebidas/caipirinha.png" alt="Caipirinha Vodka Morango">
                         </div>
-                        <span class="card-price">R$ 40</span>
+                        <div class="card-content">
+                            <h3 class="card-title">Caipirinha Vodka Morango</h3>
+                            <span class="card-price">R$ 20,00</span>
+                        </div>
                     </div>
-                    
-                    <div class="porcao-card">
-                        <span class="card-badge badge-porcao">Porção</span>
-                        <div class="card-content">
-                            <h3 class="card-title">Mix de Petiscos</h3>
-                            <p class="card-description">Frango à passarinho, batata frita, bolinho de bacalhau e torresmo</p>
+
+                    <div class="caipirinha-card">
+                        <div class="card-image">
+                            <img src="./images/bebidas/caipirinha.png" alt="Caipirinha Vodka Abacaxi">
                         </div>
-                        <span class="card-price">R$ 65</span>
+                        <div class="card-content">
+                            <h3 class="card-title">Caipirinha Vodka Abacaxi</h3>
+                            <span class="card-price">R$ 20,00</span>
+                        </div>
+                    </div>
+
+                    <div class="caipirinha-card">
+                        <div class="card-image">
+                            <img src="./images/bebidas/caipirinha.png" alt="Caipirinha Sake Limão">
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">Caipirinha Sake Limão</h3>
+                            <span class="card-price">R$ 25,00</span>
+                        </div>
+                    </div>
+
+                    <div class="caipirinha-card">
+                        <div class="card-image">
+                            <img src="./images/bebidas/caipirinha.png" alt="Caipirinha Sake Morango">
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">Caipirinha Sake Morango</h3>
+                            <span class="card-price">R$ 25,00</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Conteúdo do Cardápio - Caldos -->
-    <section id="caldos" class="cardapio-section bg-dark">
+    <!-- Seção Cachaças Doses -->
+    <section id="cachaca" class="cardapio-section">
         <div class="container">
-            <h2 class="section-title" data-aos="fade-up">Caldos</h2>
-            
+            <h2 class="section-title" data-aos="fade-up">Cachaças Doses</h2>
+
             <div class="cardapio-category" data-aos="fade-up">
-                <h3>Caldos do Dia</h3>
-                
                 <div class="card-grid">
-                    <div class="caldo-card">
-                        <span class="card-badge badge-caldo">Caldo</span>
-                        <div class="card-content">
-                            <h3 class="card-title">Caldo de Feijão</h3>
-                            <p class="card-description">Feijão, bacon, calabresa, costelinha e temperos</p>
+                    <div class="cachaca-card">
+                        <div class="card-image">
+                            <img src="./images/bebidas/51.png" alt="Cachaça 51 Dose">
                         </div>
-                        <span class="card-price">R$ 20</span>
-                    </div>
-                    
-                    <div class="caldo-card">
-                        <span class="card-badge badge-caldo">Caldo</span>
                         <div class="card-content">
-                            <h3 class="card-title">Caldo Verde</h3>
-                            <p class="card-description">Batata, linguiça portuguesa, couve e temperos</p>
+                            <h3 class="card-title">Cachaça 51 Dose</h3>
+                            <span class="card-price">R$ 5,00</span>
                         </div>
-                        <span class="card-price">R$ 20</span>
                     </div>
-                    
-                    <div class="caldo-card">
-                        <span class="card-badge badge-caldo">Caldo</span>
+
+                    <div class="cachaca-card">
+                        <div class="card-image">
+                            <img src="./images/bebidas/Cachaça Seleta Shot.png" alt="Cachaça Seleta Dose">
+                        </div>
                         <div class="card-content">
-                            <h3 class="card-title">Caldo de Mandioca</h3>
-                            <p class="card-description">Mandioca cremosa, carne seca desfiada e temperos</p>
+                            <h3 class="card-title">Cachaça Seleta Dose</h3>
+                            <span class="card-price">R$ 6,00</span>
                         </div>
-                        <span class="card-price">R$ 22</span>
                     </div>
-                    
-                    <div class="caldo-card">
-                        <span class="card-badge badge-caldo">Caldo</span>
+
+                    <div class="cachaca-card">
+                        <div class="card-image">
+                            <img src="./images/bebidas/Cachaça Salinas Dose.png" alt="Cachaça Salinas Dose">
+                        </div>
                         <div class="card-content">
-                            <h3 class="card-title">Caldo de Frango</h3>
-                            <p class="card-description">Frango desfiado, legumes e temperos</p>
+                            <h3 class="card-title">Cachaça Salinas Dose</h3>
+                            <span class="card-price">R$ 10,00</span>
                         </div>
-                        <span class="card-price">R$ 20</span>
                     </div>
-                </div>
-                
-                <div class="caldo-info" data-aos="fade-up">
-                    <div class="info-box">
-                        <i class="fas fa-info-circle"></i>
-                        <p>Consulte o sabor do dia. Todos os caldos acompanham torradas e são servidos em canecas.</p>
+
+                    <div class="cachaca-card">
+                        <div class="card-image">
+                            <img src="./images/bebidas/domecq.png" alt="Conhaque Domec Dose">
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">Conhaque Domec</h3>
+                            <span class="card-price">R$ 10,00</span>
+                        </div>
+                    </div>
+
+                    <div class="cachaca-card">
+                        <div class="card-image">
+                            <img src="./images/bebidas/DREHER.png" alt="Conhaque Dreher Dose">
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">Conhaque Dreher</h3>
+                            <span class="card-price">R$ 10,00</span>
+                        </div>
+                    </div>
+
+                    <div class="cachaca-card">
+                        <div class="card-image">
+                            <img src="./images/bebidas/FRANCISCO.png" alt="Cachaça São Francisco Dose"> 
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">São Francisco</h3>
+                            <span class="card-price">R$ 10,00</span>
+                        </div>
+                    </div>
+
+                    <div class="cachaca-card">
+                        <div class="card-image">
+                            <img src="./images/bebidas/CONTINI.png" alt="Contine Dose">
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">Contine</h3>
+                            <span class="card-price">R$ 10,00</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Conteúdo do Cardápio - Especiais -->
-    <section id="especiais" class="cardapio-section">
+    <!-- Seção Cigarros -->
+    <section id="cigarros" class="cardapio-section">
         <div class="container">
-            <h2 class="section-title" data-aos="fade-up">Especiais</h2>
-            
+            <h2 class="section-title" data-aos="fade-up">Cigarros</h2>
+
             <div class="cardapio-category" data-aos="fade-up">
-                <h3>Promoções</h3>
-                
                 <div class="card-grid">
-                    <div class="promo-card">
-                        <span class="card-badge badge-quarta">Quarta</span>
+                    <div class="cigarro-card">
+                        <div class="card-image">
+                            <img src="./images/layout/marlboro.png" alt="Marlboro">
+                        </div>
                         <div class="card-content">
-                            <h3 class="card-title">Double Gin</h3>
-                            <p class="card-description">Quartas-feiras - Todos os drinks com gin em dose dupla pelo mesmo preço</p>
+                            <h3 class="card-title">Marlboro</h3>
+                            <span class="card-price">R$ 13,00</span>
                         </div>
                     </div>
-                    
-                    <div class="promo-card">
-                        <span class="card-badge badge-terca">Terça</span>
+
+                    <div class="cigarro-card">
+                        <div class="card-image">
+                            <img src="./images/layout/Marlboro Melancia.png" alt="Marlboro Melancia">
+                        </div>
                         <div class="card-content">
-                            <h3 class="card-title">Double Caipirinha</h3>
-                            <p class="card-description">Terças-feiras - Todas as caipirinhas em dose dupla pelo mesmo preço</p>
+                            <h3 class="card-title">Marlboro Melancia</h3>
+                            <span class="card-price">R$ 15,00</span>
                         </div>
                     </div>
-                    
-                    <div class="promo-card">
-                        <span class="card-badge badge-happy">Happy</span>
+
+                    <div class="cigarro-card">
+                        <div class="card-image">
+                            <img src="./images/layout/dunhill.png" alt="Dunhill">
+                        </div>
                         <div class="card-content">
-                            <h3 class="card-title">Happy Hour</h3>
-                            <p class="card-description">De segunda a quinta das 18h às 20h - Chopp em dobro</p>
+                            <h3 class="card-title">Dunhill</h3>
+                            <span class="card-price">R$ 15,00</span>
                         </div>
                     </div>
-                    
-                    <div class="promo-card">
-                        <span class="card-badge badge-combo">Combo</span>
+
+                    <div class="cigarro-card">
+                        <div class="card-image">
+                            <img src="./images/layout/Rothmans Melancia.png" alt="Rothmans Melancia">
+                        </div>
                         <div class="card-content">
-                            <h3 class="card-title">Combo Petisco + Drink</h3>
-                            <p class="card-description">1 petisco + 2 drinks por R$ 85 (válido para seleção específica)</p>
+                            <h3 class="card-title">Rothmans Melancia</h3>
+                            <span class="card-price">R$ 12,00</span>
+                        </div>
+                    </div>
+
+                    <div class="cigarro-card">
+                        <div class="card-image">
+                            <img src="./images/layout/Rothmans Vermelho E Azul.png" alt="Rothmans Vermelho E Azul">
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">Rothmans Vermelho E Azul </h3>
+                            <span class="card-price">R$ 9,00</span>
+                        </div>
+                    </div>
+
+                    <div class="cigarro-card">
+                        <div class="card-image">
+                            <img src="./images/layout/Eight.png" alt="Eight">
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">Eight</h3>
+                            <span class="card-price">R$ 6,00</span>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- Botão Voltar ao Topo -->
+    <a href="#" class="scroll-top">
+        <i class="fas fa-arrow-up"></i>
+    </a>
 
     <!-- Footer -->
     <footer>
         <div class="container">
             <div class="row">
                 <div class="col-md-4">
-                    <img src="images/logo-removebg-preview.png" alt="Santo Drink Bar" class="footer-logo">
+                    <img src="./images/layout/logo-removebg-preview.png" alt="Santo Drink Bar" class="footer-logo">
                     <p class="slogan-footer">NÃO NASCI PARA SER COMUM, NASCI PRA BEBER</p>
                 </div>
                 <div class="col-md-4">
@@ -505,8 +1202,9 @@
                     <ul class="footer-links">
                         <li><a href="index.html">Início</a></li>
                         <li><a href="cardapio.html">Cardápio</a></li>
+                        <li><a href="gastronomia.html">Gastronomia</a></li>
                         <li><a href="sobre.html">Sobre</a></li>
-                        <li><a href="index.html#contato">Contato</a></li>
+                        <li><a href="contato.html">Contato</a></li>
                     </ul>
                 </div>
                 <div class="col-md-4">
@@ -518,10 +1216,15 @@
                             <button class="btn btn-dourado" type="submit">Assinar</button>
                         </div>
                     </form>
+                    <div class="social-media">
+                        <a href="https://www.instagram.com/santodrinkbar/" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.facebook.com/Santodrinkbarepetiscaria/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://api.whatsapp.com/send?phone=5511973736133" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    </div>
                 </div>
             </div>
             <div class="copyright">
-            <p>&copy; 2025 Santo Drink Bar - Todos os direitos reservados</p>
+                <p>&copy; 2025 Santo Drink Bar - Todos os direitos reservados</p>
             </div>
         </div>
     </footer>
@@ -530,62 +1233,70 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-    <!-- Primeiro carregamos o arquivo cardapio.js com nossas funções personalizadas -->
-    <script src="js/cardapio.js"></script>
+    <script src="./js/main.js"></script>
+    <script src="./js/cardapio.js"></script>
+    <script src="./js/card-fix.js"></script>
     <script>
-        // Inicialização AOS (Animate On Scroll)
+        // Inicialização do AOS
         AOS.init({
             duration: 800,
             easing: 'ease-in-out',
             once: true
         });
 
-        // Navegação do cardápio
-        $(document).ready(function(){
-            // Navbar scroll effect
-            $(window).scroll(function() {
-                if ($(this).scrollTop() > 50) {
-                    $('.navbar').addClass('scrolled');
-                } else {
-                    $('.navbar').removeClass('scrolled');
+        // Scroll suave para as seções do cardápio
+        document.querySelectorAll('.nav-tab').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetSection = document.querySelector(targetId);
+                
+                if (targetSection) {
+                    const offsetTop = targetSection.offsetTop - 100;
+                    window.scrollTo({
+                        top: offsetTop,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Atualiza a tab ativa
+                    document.querySelectorAll('.nav-tab').forEach(tab => {
+                        tab.classList.remove('active');
+                    });
+                    this.classList.add('active');
                 }
             });
+        });
 
-            // Navegação de tabs do cardápio
-            $('.nav-tab').click(function(e){
-                e.preventDefault();
-                
-                // Remove a classe active de todas as tabs
-                $('.nav-tab').removeClass('active');
-                
-                // Adiciona a classe active na tab clicada
-                $(this).addClass('active');
-                
-                // Pega o ID do link
-                var targetSection = $(this).attr('href');
-                
-                // Rola a página até a seção com animação
-                $('html, body').animate({
-                    scrollTop: $(targetSection).offset().top - 100
-                }, 800);
-            });
+        // Botão voltar ao topo
+        const scrollTop = document.querySelector('.scroll-top');
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 300) {
+                scrollTop.classList.add('show');
+            } else {
+                scrollTop.classList.remove('show');
+            }
+        });
 
-            // Destaque das seções do cardápio ao scrollar
-            $(window).scroll(function() {
-                var scrollPos = $(window).scrollTop();
-
-                $('section.cardapio-section').each(function() {
-                    var target = $(this).offset().top - 120;
-                    var id = $(this).attr('id');
-
-                    if (scrollPos >= target) {
-                        $('.nav-tab').removeClass('active');
-                        $('.nav-tab[href="#' + id + '"]').addClass('active');
-                    }
-                });
+        scrollTop.addEventListener('click', function(e) {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
             });
         });
+
+        // Navbar fixa com mudança de cor ao rolar
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('navbar-scrolled');
+            } else {
+                navbar.classList.remove('navbar-scrolled');
+            }
+        });
     </script>
-    
 </body>
 </html>
+
+                
+

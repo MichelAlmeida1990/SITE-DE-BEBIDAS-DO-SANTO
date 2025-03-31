@@ -1,348 +1,410 @@
 /**
  * Santo Drink Bar - Scripts Gerais
- * Contém todas as funcionalidades JavaScript do site
+ * Versão otimizada para melhor performance
  */
 
 // Variáveis globais
 let isNavOpen = false;
 let currentSection = '';
 let isScrolling = false;
+let slickInitialized = false;
 
-// Espera que o documento esteja totalmente carregado
-document.addEventListener('DOMContentLoaded', function () {
+// Espera que o documento esteja pronto
+document.addEventListener('DOMContentLoaded', function() {
     console.log('Santo Drink Bar - Inicializando scripts');
     
-    // Inicializa AOS (Animate On Scroll) com configurações otimizadas
-    AOS.init({
-        duration: 600, // Reduzido de 800 para 600
-        easing: 'ease-out',
-        once: true,
-        offset: 120, // Dispara as animações mais cedo
-        delay: 100, // Menor delay entre elementos
-        anchorPlacement: 'top-bottom' // Ativa quando o topo do elemento atinge a parte inferior da janela
-    });
-
-    // Inicializa todos os componentes
-    initNavbar();
+    // Esconde o preloader quando o DOM estiver pronto
+    hidePreloader();
+    
+    // Inicializa componentes principais
+    initNavigation();
     initScrollEffects();
-    initMobileMenu();
-    initModalHandlers();
-    initCardapioFilters();
-    initCardapioToggles();
-    initCountdowns();
+    initAnimations();
+    initInteractiveElements();
     
-    // Verifica se estamos na página do cardápio e inicializa componentes específicos
+    // Inicializa componentes específicos de página
+    if (document.querySelector('.drink-slider')) {
+        initDrinkSlider();
+    }
+    
+    if (document.querySelector('.countdown-badge')) {
+        initCountdowns();
+    }
+    
     if (document.querySelector('.cardapio-section')) {
-        initCardapioNav();
+        initCardapioComponents();
     }
     
-    // Se tivermos sliders, inicialize-os
-    if (document.querySelector('.swiper-container')) {
-        initSwipers();
-    }
-    
-    // Inicializa as animações GSAP
-    initGSAPAnimations();
+    // Detecta quando as imagens estão carregadas
+    trackImageLoading();
 });
 
-// Inicializa comportamentos da navbar
-function initNavbar() {
-    const navbar = document.querySelector('.navbar');
+// Esconde o preloader
+function hidePreloader() {
+    const preloader = document.querySelector('.preloader');
+    if (!preloader) return;
     
-    if (!navbar) return;
-    
-    window.addEventListener('scroll', function () {
+    setTimeout(() => {
+        preloader.classList.add('fade-out');
+        setTimeout(() => {
+            preloader.style.display = 'none';
+        }, 500);
+    }, 500);
+}
+
+// Inicializa navegação
+function initNavigation() {
+    // Efeito de scroll na navbar
+    window.addEventListener('scroll', debounce(function() {
         if (window.scrollY > 50) {
-            navbar.classList.add('scrolled');
+            document.querySelector('.navbar').classList.add('scrolled');
         } else {
-            navbar.classList.remove('scrolled');
+            document.querySelector('.navbar').classList.remove('scrolled');
         }
-    });
+    }, 10));
     
-    // Adiciona classe ativa ao item de navegação atual
-    const navLinks = document.querySelectorAll('.nav-link');
-    
-    navLinks.forEach(link => {
-        link.addEventListener('click', function (e) {
-            navLinks.forEach(l => l.classList.remove('active'));
-            this.classList.add('active');
-            
-            // Se estiver no mesmo documento, role suavemente
-            if (this.getAttribute('href').startsWith('#')) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    scrollToElement(target);
-                }
-            }
+    // Toggle do menu mobile
+    const menuToggler = document.querySelector('.navbar-toggler');
+    if (menuToggler) {
+        menuToggler.addEventListener('click', function() {
+            isNavOpen = !isNavOpen;
+            document.body.classList.toggle('nav-open', isNavOpen);
         });
-        
-        // Verifica se o link corresponde à URL atual
+    }
+    
+    // Links ativos na navegação
+    const navLinks = document.querySelectorAll('.nav-link');
+    navLinks.forEach(link => {
         if (link.href === window.location.href) {
             link.classList.add('active');
         }
+        
+        link.addEventListener('click', function(event) {
+            // Se for link interno com hash
+            if (this.getAttribute('href').startsWith('#')) {
+                event.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    scrollToElement(targetElement);
+                }
+                
+                // Fecha o menu mobile se estiver aberto
+                if (isNavOpen) {
+                    document.querySelector('.navbar-toggler').click();
+                }
+            }
+        });
     });
 }
 
-// Inicializa efeitos de rolagem
+// Inicializa efeitos de scroll
 function initScrollEffects() {
-    window.addEventListener('scroll', function () {
+    // Botão voltar ao topo
+    const scrollTopButton = document.querySelector('.scroll-top');
+    if (scrollTopButton) {
+        window.addEventListener('scroll', debounce(function() {
+            if (window.scrollY > 300) {
+                scrollTopButton.classList.add('show');
+            } else {
+                scrollTopButton.classList.remove('show');
+            }
+        }, 100));
+        
+        scrollTopButton.addEventListener('click', function(e) {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    }
+    
+    // Destaca seção atual durante o scroll
+    window.addEventListener('scroll', debounce(function() {
         if (isScrolling) return;
         
         isScrolling = true;
-        
-        // Aviso visual da rolagem
-        if (document.documentElement.scrollTop > 200) {
-            document.querySelector('.scroll-top').classList.add('show');
-        } else {
-            document.querySelector('.scroll-top').classList.remove('show');
-        }
-        
-        // Destaca a seção atual na navegação
         highlightCurrentSection();
         
-        // Verifica se a navbar precisa ser scrollada
-        const navbar = document.querySelector('.navbar');
-        if (navbar) {
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
-        }
-        
-        // Permite novas verificações depois de um pequeno atraso
-        setTimeout(function () {
+        setTimeout(() => {
             isScrolling = false;
-        }, 100);
-    });
-    
-    // Botão para voltar ao topo
-    document.querySelector('.scroll-top').addEventListener('click', function(e) {
-        e.preventDefault();
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
-    });
+        }, 50);
+    }, 100));
 }
 
 // Destaca a seção atual na navegação
 function highlightCurrentSection() {
     const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-link');
     
-    let scrollPosition = window.scrollY + 200;
+    let currentSectionId = '';
+    const scrollPosition = window.scrollY + 200;
     
     sections.forEach(section => {
         const sectionTop = section.offsetTop;
         const sectionHeight = section.offsetHeight;
-        const sectionId = section.getAttribute('id');
+        const sectionId = '#' + section.getAttribute('id');
         
         if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-            if (currentSection !== sectionId) {
-                currentSection = sectionId;
-                updateActiveNavLink(sectionId);
-            }
+            currentSectionId = sectionId;
         }
     });
-}
-
-// Atualiza o link ativo na navegação
-function updateActiveNavLink(sectionId) {
-    const navLinks = document.querySelectorAll('.nav-link');
     
     navLinks.forEach(link => {
         link.classList.remove('active');
-        if (link.getAttribute('href') && link.getAttribute('href').includes(sectionId)) {
+        if (link.getAttribute('href') === currentSectionId) {
             link.classList.add('active');
         }
     });
 }
 
-// Inicializa menu móvel
-function initMobileMenu() {
-    const menuToggler = document.querySelector('.navbar-toggler');
-    const navbarCollapse = document.querySelector('.navbar-collapse');
+// Inicializa animações
+function initAnimations() {
+    // Inicializa AOS (Animate On Scroll) se disponível
+    if (typeof AOS !== 'undefined') {
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true,
+            offset: 100
+        });
+    }
     
-    if (!menuToggler || !navbarCollapse) return;
+    // Inicializa animações para elementos com classe animate-on-scroll
+    initIntersectionObserver();
+}
+
+// Inicializa observador de interseção para animações
+function initIntersectionObserver() {
+    if (!('IntersectionObserver' in window)) {
+        // Fallback para navegadores que não suportam IntersectionObserver
+        document.querySelectorAll('.animate-on-scroll').forEach(el => {
+            el.classList.add('animate-in');
+        });
+        return;
+    }
     
-    menuToggler.addEventListener('click', function () {
-        isNavOpen = !isNavOpen;
+    const options = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1
+    };
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animate-in');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, options);
+    
+    document.querySelectorAll('.animate-on-scroll').forEach(el => {
+        observer.observe(el);
+    });
+}
+
+// Inicializa elementos interativos
+function initInteractiveElements() {
+    // Efeito hover nos cards
+    document.querySelectorAll('.destaque-card, .promo-card, .menu-item').forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            this.classList.add('hover');
+        });
         
-        if (isNavOpen) {
-            this.classList.add('active');
-            navbarCollapse.classList.add('show');
-            document.body.classList.add('nav-open');
-        } else {
-            this.classList.remove('active');
-            navbarCollapse.classList.remove('show');
-            document.body.classList.remove('nav-open');
-        }
-    });
-    
-    // Fecha menu ao clicar em links
-    const navLinks = document.querySelectorAll('.navbar-collapse .nav-link');
-    
-    navLinks.forEach(link => {
-        link.addEventListener('click', function () {
-            if (isNavOpen) {
-                menuToggler.classList.remove('active');
-                navbarCollapse.classList.remove('show');
-                document.body.classList.remove('nav-open');
-                isNavOpen = false;
-            }
-        });
-    });
-}
-
-// Manipuladores de modal
-function initModalHandlers() {
-    // Fecha modal ao clicar fora
-    const modals = document.querySelectorAll('.modal');
-    
-    modals.forEach(modal => {
-        modal.addEventListener('click', function (e) {
-            if (e.target === this) {
-                closeModal(this.id);
-            }
+        card.addEventListener('mouseleave', function() {
+            this.classList.remove('hover');
         });
     });
     
-    // Botões para abrir modal
-    const modalButtons = document.querySelectorAll('[data-toggle="modal"]');
-    
-    modalButtons.forEach(button => {
-        button.addEventListener('click', function (e) {
-            e.preventDefault();
-            const targetModal = this.getAttribute('data-target').substring(1);
-            openModal(targetModal);
-        });
-    });
-    
-    // Botões para fechar modal
-    const closeButtons = document.querySelectorAll('.close-modal, .modal-close');
-    
-    closeButtons.forEach(button => {
-        button.addEventListener('click', function (e) {
-            e.preventDefault();
-            const modal = this.closest('.modal');
-            closeModal(modal.id);
-        });
-    });
-}
-
-// Abre um modal
-function openModal(modalId) {
-    const modal = document.getElementById(modalId);
-    if (!modal) return;
-    
-    modal.style.display = 'flex';
-    
-    setTimeout(() => {
-        modal.classList.add('show');
-        document.body.classList.add('modal-open');
-    }, 10);
-}
-
-// Fecha um modal
-function closeModal(modalId) {
-    const modal = document.getElementById(modalId);
-    if (!modal) return;
-    
-    modal.classList.remove('show');
-    
-    setTimeout(() => {
-        modal.style.display = 'none';
-        document.body.classList.remove('modal-open');
-    }, 300);
-}
-
-// Inicializa navegação do cardápio
-function initCardapioNav() {
-    const navTabs = document.querySelectorAll('.nav-tab');
-    const cardapioNav = document.querySelector('.cardapio-nav');
-    
-    if (!navTabs.length || !cardapioNav) return;
-    
-    // Destaca a primeira tab por padrão
-    navTabs[0].classList.add('active');
-    
-    // Adiciona eventos de clique para navegação entre seções
-    navTabs.forEach(tab => {
-        tab.addEventListener('click', function (e) {
-            e.preventDefault();
-            
-            const targetId = this.getAttribute('href');
-            const targetSection = document.querySelector(targetId);
-            
-            if (targetSection) {
-                navTabs.forEach(t => t.classList.remove('active'));
-                this.classList.add('active');
-                
-                // Rola até a seção alvo com offset
-                scrollToElement(targetSection, 100);
-            }
-        });
-    });
-    
-    // Adiciona classe à navbar do cardápio ao rolar
-    window.addEventListener('scroll', function () {
-        if (window.scrollY > 100) {
-            cardapioNav.classList.add('scrolled');
-        } else {
-            cardapioNav.classList.remove('scrolled');
-        }
-    });
-    
-    // Destaca seção atual enquanto navega
-    highlightCurrentCardapioSection();
-}
-
-// Destaca a seção atual do cardápio enquanto rola
-function highlightCurrentCardapioSection() {
-    const cardapioSections = document.querySelectorAll('.cardapio-section');
-    const navTabs = document.querySelectorAll('.nav-tab');
-    let currentTabId = '';
-    
-    window.addEventListener('scroll', function () {
-        // Determina a posição atual
-        const scrollPosition = window.scrollY + 200;
+    // Efeito ripple nos botões
+    document.querySelectorAll('.btn').forEach(btn => {
+        btn.classList.add('btn-ripple');
         
-        // Verifica qual seção está visível
-        cardapioSections.forEach(section => {
-            const sectionTop = section.offsetTop;
-            const sectionHeight = section.offsetHeight;
-            const sectionId = '#' + section.getAttribute('id');
+        btn.addEventListener('click', function(e) {
+            const rect = this.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
             
-            if (scrollPosition >= sectionTop && 
-                scrollPosition < sectionTop + sectionHeight) {
-                if (currentTabId !== sectionId) {
-                    currentTabId = sectionId;
+            const ripple = document.createElement('span');
+            ripple.classList.add('ripple');
+            ripple.style.left = `${x}px`;
+            ripple.style.top = `${y}px`;
+            
+            this.appendChild(ripple);
+            
+            setTimeout(() => {
+                ripple.remove();
+            }, 600);
+        });
+    });
+    
+    // Inicializa formulários
+    document.querySelectorAll('form').forEach(form => {
+        form.addEventListener('submit', function(e) {
+            // Previne envio para implementar validação personalizada
+            // Remova esta linha quando implementar o envio real
+            e.preventDefault();
+            
+            // Exemplo de validação simples
+            let isValid = true;
+            const requiredFields = this.querySelectorAll('[required]');
+            
+            requiredFields.forEach(field => {
+                if (!field.value.trim()) {
+                    isValid = false;
+                    field.classList.add('is-invalid');
+                } else {
+                    field.classList.remove('is-invalid');
+                }
+            });
+            
+            if (isValid) {
+                // Simulação de envio bem-sucedido
+                // Substitua por código real de envio
+                const submitBtn = this.querySelector('[type="submit"]');
+                if (submitBtn) {
+                    const originalText = submitBtn.innerHTML;
+                    submitBtn.disabled = true;
+                    submitBtn.innerHTML = '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Enviando...';
                     
-                    // Remove a classe ativa de todas as tabs
-                    navTabs.forEach(tab => tab.classList.remove('active'));
-                    
-                    // Adiciona a classe ativa à tab correspondente
-                    const activeTab = document.querySelector(`.nav-tab[href="${sectionId}"]`);
-                    if (activeTab) {
-                        activeTab.classList.add('active');
-                    }
+                    setTimeout(() => {
+                        this.reset();
+                        submitBtn.disabled = false;
+                        submitBtn.innerHTML = originalText;
+                        showToast('Mensagem enviada com sucesso!', 'success');
+                    }, 1500);
                 }
             }
         });
     });
 }
 
-// Inicializa filtros do cardápio
-function initCardapioFilters() {
-    const filterButtons = document.querySelectorAll('.filter-btn');
+// Inicializa slider de drinks
+function initDrinkSlider() {
+    // Verifica se jQuery e Slick estão disponíveis
+    if (typeof jQuery === 'undefined' || typeof jQuery.fn.slick === 'undefined') {
+        console.warn('jQuery ou Slick não encontrados. O slider não será inicializado.');
+        return;
+    }
     
-    if (!filterButtons.length) return;
+    // Verifica se o slider já foi inicializado
+    if (slickInitialized) return;
+    
+    // Inicializa o slider quando a página estiver totalmente carregada
+    window.addEventListener('load', function() {
+        jQuery('.drink-slider').slick({
+            slidesToShow: 3,
+            slidesToScroll: 1,
+            autoplay: true,
+            autoplaySpeed: 3000,
+            dots: true,
+            arrows: true,
+            centerMode: true,
+            centerPadding: '0',
+            responsive: [
+                {
+                    breakpoint: 992,
+                    settings: {
+                        slidesToShow: 2,
+                        centerMode: false
+                    }
+                },
+                {
+                    breakpoint: 576,
+                    settings: {
+                        slidesToShow: 1,
+                        arrows: false
+                    }
+                }
+            ]
+        });
+        
+        slickInitialized = true;
+        console.log('Slider de drinks inicializado');
+        
+        // Força uma atualização do layout após o carregamento
+        setTimeout(function() {
+            window.dispatchEvent(new Event('resize'));
+        }, 500);
+    });
+    
+    // Monitora visibilidade do slider durante o scroll
+    window.addEventListener('scroll', debounce(function() {
+        checkDrinkSliderVisibility();
+    }, 100));
+}
+
+// Verifica se o slider de drinks está visível
+function checkDrinkSliderVisibility() {
+    const drinkSlider = document.querySelector('.drink-slider');
+    if (!drinkSlider) return;
+    
+    const rect = drinkSlider.getBoundingClientRect();
+    const isVisible = (
+        rect.top >= -rect.height &&
+        rect.left >= 0 &&
+        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) * 1.5 &&
+        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+    
+    if (isVisible && !drinkSlider.classList.contains('initialized')) {
+        drinkSlider.classList.add('initialized');
+        // Força uma atualização do layout do slider
+        window.dispatchEvent(new Event('resize'));
+    }
+}
+
+// Inicializa contadores regressivos
+function initCountdowns() {
+    function updateCountdown(dayOfWeek, elementId) {
+        const now = new Date();
+        let nextDay = new Date();
+        
+        // Ajusta para o próximo dia da semana (0 = domingo, 1 = segunda, ..., 6 = sábado)
+        const daysUntil = (dayOfWeek - now.getDay() + 7) % 7;
+        nextDay.setDate(now.getDate() + (daysUntil === 0 ? 7 : daysUntil));
+        nextDay.setHours(18, 0, 0, 0); // Define para às 18h
+        
+        const timeRemaining = nextDay - now;
+        
+        // Conversão para dias, horas, minutos
+        const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
+        
+        // Atualiza o HTML
+        const element = document.getElementById(elementId);
+        if (element) {
+            element.textContent = `${days}d ${hours}h ${minutes}m`;
+        }
+    }
+    
+    // Atualiza contagem regressiva a cada segundo
+    const countdownElements = document.querySelectorAll('.countdown-badge');
+    if (countdownElements.length > 0) {
+        // Inicializa os contadores para terça e quarta
+        updateCountdown(2, 'countdown-terca');    // 2 = Terça-feira
+        updateCountdown(3, 'countdown-quarta');   // 3 = Quarta-feira
+        
+        // Atualiza a cada segundo
+        setInterval(() => {
+            updateCountdown(2, 'countdown-terca');
+            updateCountdown(3, 'countdown-quarta');
+        }, 1000);
+    }
+}
+
+// Inicializa componentes do cardápio
+function initCardapioComponents() {
+    // Filtros do cardápio
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const menuItems = document.querySelectorAll('.menu-item');
     
     filterButtons.forEach(button => {
-        button.addEventListener('click', function () {
-            const filter = this.getAttribute('data-filter');
-            
+        button.addEventListener('click', function() {
             // Remove classe ativa de todos os botões
             filterButtons.forEach(btn => btn.classList.remove('active'));
             
@@ -350,146 +412,64 @@ function initCardapioFilters() {
             this.classList.add('active');
             
             // Filtra os itens
-            const menuItems = document.querySelectorAll('.menu-item');
+            const filter = this.getAttribute('data-filter');
             
             menuItems.forEach(item => {
                 if (filter === 'all') {
-                    item.style.display = 'flex';
-                } else if (item.classList.contains(filter)) {
-                    item.style.display = 'flex';
+                    item.style.display = 'block';
+                    setTimeout(() => {
+                        item.classList.remove('filtered-out');
+                    }, 10);
                 } else {
-                    item.style.display = 'none';
+                    if (item.classList.contains(filter)) {
+                        item.style.display = 'block';
+                        setTimeout(() => {
+                            item.classList.remove('filtered-out');
+                        }, 10);
+                    } else {
+                        item.classList.add('filtered-out');
+                        setTimeout(() => {
+                            item.style.display = 'none';
+                        }, 300);
+                    }
                 }
             });
         });
     });
 }
 
-// Inicializa toggles do cardápio
-function initCardapioToggles() {
-    // Toggle de detalhes
-    const detailsButtons = document.querySelectorAll('.details-btn');
+// Monitora o carregamento de imagens
+function trackImageLoading() {
+    const images = document.querySelectorAll('img');
+    let loadedImages = 0;
+    const totalImages = images.length;
     
-    if (detailsButtons.length) {
-        detailsButtons.forEach(button => {
-            button.addEventListener('click', function () {
-                const cardItem = this.closest('.menu-item, .drink-card');
-                const detailsContent = cardItem.querySelector('.details-content');
-                
-                if (detailsContent.classList.contains('show')) {
-                    detailsContent.classList.remove('show');
-                    this.innerHTML = '<i class="fas fa-info-circle"></i> Detalhes';
-                } else {
-                    detailsContent.classList.add('show');
-                    this.innerHTML = '<i class="fas fa-times-circle"></i> Fechar';
-                }
-            });
-        });
+    function imageLoaded() {
+        loadedImages++;
+        if (loadedImages === totalImages) {
+            console.log('Todas as imagens foram carregadas');
+            // Força uma atualização do layout
+            window.dispatchEvent(new Event('resize'));
+        }
     }
     
-    // Toggle de visualização (grade/lista)
-    const viewToggle = document.querySelector('.view-toggle');
-    
-    if (viewToggle) {
-        viewToggle.addEventListener('click', function () {
-            const cardapioRow = document.querySelector('#bebidas-row');
-            
-            if (cardapioRow.classList.contains('grid-view')) {
-                cardapioRow.classList.remove('grid-view');
-                this.innerHTML = '<i class="fas fa-th"></i> Ver em Grade';
-            } else {
-                cardapioRow.classList.add('grid-view');
-                this.innerHTML = '<i class="fas fa-list"></i> Ver em Lista';
-            }
-        });
-    }
-}
-
-// Inicializa contadores regressivos
-function initCountdowns() {
-    const countdownElements = document.querySelectorAll('.countdown');
-    
-    if (!countdownElements.length) return;
-    
-    countdownElements.forEach(countdown => {
-        const targetDate = new Date(countdown.getAttribute('data-target-date'));
-        
-        // Atualiza cada segundo
-        const timer = setInterval(function () {
-            const now = new Date().getTime();
-            const distance = targetDate - now;
-            
-            // Calcula dias, horas, minutos e segundos
-            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-            
-            // Atualiza o texto
-            countdown.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
-            
-            // Se o contador acabou
-            if (distance < 0) {
-                clearInterval(timer);
-                countdown.innerHTML = "EXPIRADO";
-            }
-        }, 1000);
+    images.forEach(img => {
+        // Verifica se a imagem já está carregada
+        if (img.complete) {
+            imageLoaded();
+        } else {
+            img.addEventListener('load', imageLoaded);
+            img.addEventListener('error', imageLoaded); // Conta mesmo se falhar
+        }
     });
 }
 
-// Inicializa sliders Swiper
-function initSwipers() {
-    // Slider de promoções
-    if (document.querySelector('.promos-swiper')) {
-        new Swiper('.promos-swiper', {
-            slidesPerView: 1,
-            spaceBetween: 20,
-            loop: true,
-            autoplay: {
-                delay: 5000,
-                disableOnInteraction: false,
-            },
-            pagination: {
-                el: '.swiper-pagination',
-                clickable: true,
-            },
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-            },
-            breakpoints: {
-                640: {
-                    slidesPerView: 2,
-                },
-                992: {
-                    slidesPerView: 3,
-                }
-            }
-        });
-    }
-    
-    // Slider de depoimentos
-    if (document.querySelector('.testimonials-swiper')) {
-        new Swiper('.testimonials-swiper', {
-            slidesPerView: 1,
-            spaceBetween: 30,
-            loop: true,
-            autoplay: {
-                delay: 4000,
-                disableOnInteraction: false,
-            },
-            pagination: {
-                el: '.swiper-pagination',
-                clickable: true,
-            }
-        });
-    }
-}
-
-// Função auxiliar para rolagem suave
-function scrollToElement(element, offset = 0) {
-    const elementPosition = element.getBoundingClientRect().top + window.scrollY;
-    const offsetPosition = elementPosition - offset;
+// Função para scroll suave até um elemento
+function scrollToElement(element) {
+    const navbar = document.querySelector('.navbar');
+    const navbarHeight = navbar ? navbar.offsetHeight : 0;
+    const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+    const offsetPosition = elementPosition - navbarHeight - 20;
     
     window.scrollTo({
         top: offsetPosition,
@@ -497,128 +477,99 @@ function scrollToElement(element, offset = 0) {
     });
 }
 
-// Inicializa animações GSAP
-function initGSAPAnimations() {
-    // Verifica se o GSAP foi carregado
-    if (typeof gsap === 'undefined') {
-        console.warn('GSAP não encontrado. As animações avançadas não serão carregadas.');
-        return;
+// Função para mostrar toast de notificação
+function showToast(message, type = 'info') {
+    // Verifica se já existe um container de toast
+    let toastContainer = document.querySelector('.toast-container');
+    
+    if (!toastContainer) {
+        toastContainer = document.createElement('div');
+        toastContainer.className = 'toast-container';
+        document.body.appendChild(toastContainer);
     }
     
-    // Registra o plugin ScrollTrigger se disponível
-    if (typeof ScrollTrigger !== 'undefined') {
-        gsap.registerPlugin(ScrollTrigger);
-        console.log('GSAP ScrollTrigger registrado');
-    }
+    // Cria o toast
+    const toast = document.createElement('div');
+    toast.className = `toast toast-${type}`;
+    toast.innerHTML = `
+        <div class="toast-content">
+            <i class="fas ${type === 'success' ? 'fa-check-circle' : 'fa-info-circle'}"></i>
+            <span>${message}</span>
+        </div>
+        <button class="toast-close">&times;</button>
+    `;
     
-    // Animações para os cards de drink
-    const drinkCards = document.querySelectorAll('.drink-card');
-    if (drinkCards.length) {
-        gsap.utils.toArray('.drink-card').forEach((card, i) => {
-            gsap.from(card, {
-                y: 50,
-                opacity: 0,
-                duration: 0.6,
-                ease: "power2.out",
-                scrollTrigger: {
-                    trigger: card,
-                    start: "top bottom-=100",
-                    toggleActions: "play none none none"
-                },
-                delay: i * 0.1
-            });
-        });
-    }
+    // Adiciona o toast ao container
+    toastContainer.appendChild(toast);
     
-    // Animação fluida para navegação entre seções
-    const navLinks = document.querySelectorAll('.nav-tab');
-    if (navLinks.length) {
-        navLinks.forEach(link => {
-            link.addEventListener('click', function(e) {
-                if (this.getAttribute('href').startsWith('#')) {
-                    e.preventDefault();
-                    const target = document.querySelector(this.getAttribute('href'));
-                    
-                    if (target) {
-                        gsap.to(window, {
-                            duration: 0.8, 
-                            scrollTo: {
-                                y: target,
-                                offsetY: 100
-                            },
-                            ease: "power3.inOut"
-                        });
-                    }
+    // Mostra o toast com animação
+    setTimeout(() => {
+        toast.classList.add('show');
+    }, 10);
+    
+    // Adiciona evento para fechar o toast
+    const closeButton = toast.querySelector('.toast-close');
+    closeButton.addEventListener('click', () => {
+        toast.classList.remove('show');
+        setTimeout(() => {
+            toast.remove();
+        }, 300);
+    });
+    
+    // Remove o toast automaticamente após 5 segundos
+    setTimeout(() => {
+        if (toast.parentNode) {
+            toast.classList.remove('show');
+            setTimeout(() => {
+                if (toast.parentNode) {
+                    toast.remove();
                 }
-            });
-        });
-    }
-    
-    // Efeito de hover nos cards com GSAP
-    const menuItems = document.querySelectorAll('.drink-card, .menu-item, .promo-card, .destaque-card');
-    if (menuItems.length) {
-        menuItems.forEach(card => {
-            card.addEventListener('mouseenter', () => {
-                gsap.to(card, {
-                    y: -8,
-                    boxShadow: "0 15px 25px rgba(0,0,0,0.3)",
-                    duration: 0.3
-                });
-            });
-            
-            card.addEventListener('mouseleave', () => {
-                gsap.to(card, {
-                    y: 0,
-                    boxShadow: "0 5px 15px rgba(0,0,0,0.2)",
-                    duration: 0.5
-                });
-            });
-        });
-    }
-    
-    // Animação para títulos de seção
-    const sectionTitles = document.querySelectorAll('.section-title');
-    if (sectionTitles.length) {
-        sectionTitles.forEach(title => {
-            gsap.from(title, {
-                y: 30,
-                opacity: 0,
-                duration: 1,
-                ease: "power3.out",
-                scrollTrigger: {
-                    trigger: title,
-                    start: "top bottom-=100"
-                }
-            });
-        });
-    }
-    
-    // Anima badges com movimento sutil
-    const badges = document.querySelectorAll('.badge, .card-badge, .promo-badge');
-    if (badges.length) {
-        badges.forEach(badge => {
-            gsap.to(badge, {
-                y: "-5px",
-                duration: 1.5,
-                ease: "sine.inOut",
-                repeat: -1,
-                yoyo: true
-            });
-        });
-    }
-    
-    // Efeito parallax suave para imagens de fundo
-    const heroSection = document.querySelector('.hero-section');
-    if (heroSection) {
-        gsap.to(heroSection, {
-            backgroundPosition: "50% 30%",
-            ease: "none",
-            scrollTrigger: {
-                trigger: heroSection,
-                start: "top top",
-                end: "bottom top",
-                scrub: true
+            }, 300);
+        }
+    }, 5000);
+}
+
+// Função utilitária para debounce
+function debounce(func, wait) {
+    let timeout;
+    return function executedFunction(...args) {
+        const later = () => {
+            clearTimeout(timeout);
+            func(...args);
+        };
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+    };
+}
+
+// Função para detectar suporte a recursos do navegador
+function supportsFeature(feature) {
+    switch (feature) {
+        case 'intersectionObserver':
+            return 'IntersectionObserver' in window;
+        case 'webp':
+            const canvas = document.createElement('canvas');
+            if (canvas.getContext && canvas.getContext('2d')) {
+                return canvas.toDataURL('image/webp').indexOf('data:image/webp') === 0;
             }
-        });
+            return false;
+        default:
+            return false;
     }
 }
+
+// Adiciona classe ao body com base nos recursos suportados
+function addFeatureDetectionClasses() {
+    const body = document.body;
+    
+    if (supportsFeature('intersectionObserver')) {
+        body.classList.add('supports-io');
+    }
+    
+    if (supportsFeature('webp')) {
+        body.classList.add('supports-webp');
+    }
+}
+
+// Chama a detecção de recursos quando o DOM estiver pronto
+document.addEventListener('DOMContentLoaded', addFeatureDetectionClasses);

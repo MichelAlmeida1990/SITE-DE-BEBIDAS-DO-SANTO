@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cardápio | Santo Drink</title>
+    <link rel="stylesheet" href="cardapio.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Santo Drink Bar</h1>
+        </div>
+    </header>
+    <section class="cardapio-nav">
+        <div class="container">
+            <div class="nav-tabs" data-aos="fade-up">
+                <a href="#drinks" class="nav-tab active">Drinks</a>
+                <a href="#porcoes" class="nav-tab">Porções</a>
+                <a href="#caldos" class="nav-tab">Caldos</a>
+                <a href="#shots" class="nav-tab">Shots</a>
+                <a href="#whisky" class="nav-tab">Whisky</a>
+                <a href="#vodka" class="nav-tab">Vodka</a>
+                <a href="#cachaca" class="nav-tab">Cachaças</a>
+                <a href="#cervejas" class="nav-tab">Cervejas</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Navegação do cardápio será inserida aqui -->
+    
+    <!-- Seções do cardápio serão inseridas aqui -->
+    
+<section id="drinks" class="cardapio-section">
+    <div class="container">
+        <h2 class="section-title" data-aos="fade-up">Drinks</h2>
+        
+        <div class="cardapio-category" data-aos="fade-up">
+            <h3>Especiais da Casa</h3>
+            
+            <div class="card-grid">
+                <div class="drink-card">
+                    <span class="card-badge badge-destaque">Destaque</span>
+                    <div class="card-image">
+                        <img src="./images/bebidas/gin-tonica.png" alt="Gin Tônica">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Gin Tônica</h3>
+                        <p class="card-description">Gin italiano, fruta e tônica</p>
+                        <span class="card-price">R$ 30,00</span>
+                    </div>
+                </div>
+                
+                <div class="drink-card">
+                    <span class="card-badge badge-drink">Drink</span>
+                    <div class="card-image">
+                        <img src="./images/bebidas/d-gym-2.png" alt="Gin Beefeater Pink">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Gin Beefeater Pink</h3>
+                        <p class="card-description">Gin Beefeater Pink + Red Bull + Fruta</p>
+                        <span class="card-price">R$ 45,00</span>
+                    </div>
+                </div>
+                
+                <div class="drink-card">
+                    <span class="card-badge badge-drink">Drink</span>
+                    <div class="card-image">
+                        <img src="./images/bebidas/drink5.png" alt="Sex On The Beach">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Sex On The Beach</h3>
+                        <p class="card-description">Vodka, suco de laranja, licor de pêssego e groselha</p>
+                        <span class="card-price">R$ 25,00</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Santo Drink. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+    
+    <script src="script.js"></script>
+</body>
+</html>
